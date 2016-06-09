@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import Autocomplete from 'react-autocomplete';
 import throttle from 'lodash.throttle';
 import cssModules from 'react-css-modules';
@@ -26,7 +26,7 @@ export default class AddGearForm extends Component {
   }
 
   componentDidMount() {
-    ReactDOM.findDOMNode(this.refs.autocomplete).querySelector('input').focus();
+    findDOMNode(this.refs.autocomplete).querySelector('input').focus();
   }
 
   handleInputChange(e, input) {
