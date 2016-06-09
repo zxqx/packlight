@@ -23,6 +23,10 @@ export default class AddGearForm extends Component {
     }
   }
 
+  componentDidMount() {
+    React.findDOMNode(this.refs.autocomplete).querySelector('input').focus();
+  }
+
   handleInputChange(e, input) {
     this.setState({ input });
     if (!input) return;
@@ -62,6 +66,7 @@ export default class AddGearForm extends Component {
       <form onSubmit={this.handleFormSubmit.bind(this)}>
         <Autocomplete
           inputProps={{ placeholder: "Add gear..." }}
+          ref="autocomplete"
           value={this.state.input}
           items={this.state.results}
           getItemValue={item => item.name}
