@@ -30,18 +30,17 @@ function getWeightInLbs(unit, weight) {
 }
 
 function processData(data) {
-  return data.map(product => {
-    if (!productHasWeightAttribute(product)) return;
+  return data
+    .filter(product => productHasWeightAttribute(product))
+    .map(product => {
+      const unit = getProductWeightUnit(product);
+      const weight = getProductWeight(product);
 
-    const unit = getProductWeightUnit(product);
-    const weight = getProductWeight(product);
-
-    return {
-      name: getProductName(product),
-      weight: getWeightInLbs(unit, weight)
-    };
-  })
-  .filter(product => !!product);
+      return {
+        name: getProductName(product),
+        weight: getWeightInLbs(unit, weight)
+      };
+    });
 }
 
 
