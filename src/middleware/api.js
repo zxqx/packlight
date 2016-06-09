@@ -19,14 +19,14 @@ function getProductWeight(product) {
 }
 
 function getWeightInLbs(unit, weight) {
-  const weightConversionMap = {
+  const lbConversionMap = {
     grams: 0.00220462,
     'hundredths-pounds': 0.01,
     ounces: 0.0625,
     pounds: 1
   };
 
-  return parseFloat(weight) * weightConversionMap[unit];
+  return parseFloat(weight) * lbConversionMap[unit];
 }
 
 function processData(data) {
