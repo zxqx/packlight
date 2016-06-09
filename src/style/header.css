@@ -1,0 +1,10 @@
+@value colors: './colors.css';
+@value primary from colors;
+
+.h2 {
+  margin: 10px 0 50px;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: primary;
+}

@@ -1,0 +1,11 @@
+.name {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.weight {
+  font-weight: 300;
+  text-align: right;
+}

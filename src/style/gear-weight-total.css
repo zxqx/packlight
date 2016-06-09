@@ -1,0 +1,13 @@
+.total {
+  text-align: left;
+}
+
+.total td {
+  border-top: 1px solid #ccc;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.weight {
+  text-align: right;
+}

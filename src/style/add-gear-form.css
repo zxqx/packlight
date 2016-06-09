@@ -1,0 +1,45 @@
+@value colors: './colors.css';
+@value primary from colors;
+
+input[role='combobox'] {
+  padding: 8px;
+  width: 320px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.suggestion {
+  padding: 5px 10px;
+  width: 319px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion:last-child {
+  border-bottom: none;
+}
+
+.suggestion:hover {
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+.highlighted {
+  composes: suggestion;
+  background: #f7f7f7;
+}
+
+.submit {
+  margin-left: -2px;
+  padding: 12px 30px 11px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  color: #eee;
+  background: primary;
+  border: 0;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
