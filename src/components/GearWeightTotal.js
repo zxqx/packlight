@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from '../style/gear-weight-total.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class GearWeightTotal extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     items: PropTypes.array.isRequired
   };
 
@@ -19,7 +20,7 @@ export default class GearWeightTotal extends Component {
       <tr className={styles.total}>
         <td>Total</td>
         <td className={styles.weight}>
-          {items.reduce((a, b) => <span>{total.toFixed(3)} lb</span>, 0)}
+          <span>{total.toFixed(3)} lb</span>
         </td>
       </tr>
     );

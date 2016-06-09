@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from '../style/gear-item.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class GearItem extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     item: PropTypes.object.isRequired
   };
 

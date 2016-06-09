@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import Header from '../components/Header';
 import styles from '../style/index.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class Main extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     children: PropTypes.any.isRequired
   };
 

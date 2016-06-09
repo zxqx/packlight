@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
-import CSSModules from 'react-css-modules';
+import React, { Component, PropTypes } from 'react';
+import cssModules from 'react-css-modules';
 import styles from '../style/header.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class Header extends Component {
+  static propTypes = {
+    styles: PropTypes.object
+  };
+
   render() {
     const { styles } = this.props;
 

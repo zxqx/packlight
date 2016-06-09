@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import GearItem from './GearItem';
 import GearWeightTotal from './GearWeightTotal';
 import styles from '../style/gear-list.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class GearList extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     items: PropTypes.array.isRequired
   };
 

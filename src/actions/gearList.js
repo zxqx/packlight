@@ -10,11 +10,11 @@ export function addGearItem(payload) {
 }
 
 export function getGearListSuggestions(keywords) {
-  return async dispatch => {
+  return async () => {
     try {
       return await fetchGearListSuggestions(keywords);
     } catch (e) {
-      console.log(e);
+      throw new Error(e);
     }
   };
 }

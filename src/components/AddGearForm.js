@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import Autocomplete from 'react-autocomplete';
 import throttle from 'lodash.throttle';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from '../style/add-gear-form.css';
 
-@CSSModules(styles)
+@cssModules(styles)
 export default class AddGearForm extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     addGearItem: PropTypes.func.isRequired,
     getGearListSuggestions: PropTypes.func.isRequired
   };
@@ -20,11 +22,11 @@ export default class AddGearForm extends Component {
       input: '',
       selection: null,
       results: []
-    }
+    };
   }
 
   componentDidMount() {
-    React.findDOMNode(this.refs.autocomplete).querySelector('input').focus();
+    ReactDOM.findDOMNode(this.refs.autocomplete).querySelector('input').focus();
   }
 
   handleInputChange(e, input) {
@@ -65,7 +67,7 @@ export default class AddGearForm extends Component {
     return (
       <form onSubmit={this.handleFormSubmit.bind(this)}>
         <Autocomplete
-          inputProps={{ placeholder: "Add gear..." }}
+          inputProps={{ placeholder: 'Add gear...' }}
           ref="autocomplete"
           value={this.state.input}
           items={this.state.results}
@@ -73,7 +75,9 @@ export default class AddGearForm extends Component {
           onChange={this.handleInputChange.bind(this)}
           onSelect={this.selectSuggestion.bind(this)}
           renderItem={(item, isHighlighted) => (
-            <div key={item.name} className={isHighlighted ? styles.highlighted : styles.suggestion}>{item.name}</div>
+            <div key={item.name} className={isHighlighted ? styles.highlighted : styles.suggestion}>
+              {item.name}
+            </div>
           )}
         />
 

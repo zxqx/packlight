@@ -8,9 +8,11 @@ import wrapActionCreators from '../utils/wrapActionCreators';
 @connect(state => ({
   gearList: state.gearList
 }), wrapActionCreators(GearListActions))
-export default class HomePage extends Component {
+export default class AddGearPage extends Component {
   static propTypes = {
-    gearList: PropTypes.array.isRequired
+    gearList: PropTypes.array.isRequired,
+    addGearItem: PropTypes.func.isRequired,
+    getGearListSuggestions: PropTypes.func.isRequired
   };
 
   render() {
