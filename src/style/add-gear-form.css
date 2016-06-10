@@ -2,6 +2,7 @@
 @value primary from colors;
 
 input[role='combobox'] {
+  margin-top: 20px;
   padding: 8px 10px;
   width: 320px;
   font-family: 'Roboto Condensed', sans-serif;
