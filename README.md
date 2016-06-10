@@ -56,7 +56,7 @@ $ npm run build
 
 ## Roadmap
 
-+ Product search API integration
++ ~Product search API integration~
 + Category organization
 + Filter by category
 + Filter by brand
@@ -73,5 +73,6 @@ $ npm run build
 + Create checklist
 + Quantity control
 + User creation/authentication
++ Gear list persistence
 + Circle CI integration
 + Set up heroku pipeline and deployment
