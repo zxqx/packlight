@@ -18,7 +18,7 @@ export default class GearListList extends Component {
         <ul className={styles.list}>
           <li>Winter 2-Day</li>
           <li>Overnight</li>
-          <li>Summer Week</li>
+          <li><strong>Summer Week</strong></li>
           <li>Car Camping</li>
         </ul>
       </div>
