@@ -1,7 +1,12 @@
+.container {
+  margin: 0 auto;
+  width: 1000px;
+  display: flex;
+}
 .content {
   margin: 30px auto 0;
   padding: 20px 15px;
-  max-width: 600px;
+  width: 500px;
   text-align: center;
   background: #fff;
   border: 1px solid #e1e1e1;
