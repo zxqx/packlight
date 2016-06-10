@@ -1,11 +1,8 @@
-@value colors: './colors.css';
-@value primary from colors;
-
 .navbar {
   position: relative;
   margin-bottom: 0;
   padding: 10px 20px;
-  background: primary;
+  background: #222;
   border: 0;
   border-radius: 0;
   box-shadow: 0 0 5px rgba(0, 0, 10, 0.5);

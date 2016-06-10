@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
 import Header from '../components/Header';
-import styles from '../style/index.css';
+import styles from '../style/index.scss';
 
 @cssModules(styles)
 export default class Main extends Component {

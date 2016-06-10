@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
-import styles from '../style/gear-item.css';
+import styles from '../style/gear-item.scss';
 
 @cssModules(styles)
 export default class GearItem extends Component {
@@ -14,7 +14,9 @@ export default class GearItem extends Component {
 
     return (
       <tr>
-        <td className={styles.image}><img src={item.image} /></td>
+        <td className={styles.image}>
+          <img src={item.image} className={styles.thumbnail} />
+        </td>
         <td className={styles.name}>{item.name}</td>
         <td className={styles.weight}>{item.weight} lb</td>
       </tr>

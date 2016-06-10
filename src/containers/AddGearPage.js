@@ -8,7 +8,7 @@ import GearList from '../components/GearList';
 import GearListList from '../components/GearListList';
 import * as GearListActions from '../actions/gearList';
 import wrapActionCreators from '../utils/wrapActionCreators';
-import styles from '../style/common.css';
+import styles from '../style/common.scss';
 
 @connect(state => ({
   gearList: state.gearList
