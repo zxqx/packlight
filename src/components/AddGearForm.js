@@ -56,9 +56,9 @@ export default class AddGearForm extends Component {
     });
   }
 
-  getGearListSuggestions(input) {
-    return this.props.getGearListSuggestions(input)
-      .then(results => this.setState({ results }));
+  async getGearListSuggestions(input) {
+    const results = await this.props.getGearListSuggestions(input);
+    this.setState({ results });
   }
 
   render() {
