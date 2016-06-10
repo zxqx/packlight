@@ -9,12 +9,15 @@ export default class GearWeightTotal extends Component {
     items: PropTypes.array.isRequired
   };
 
-  render() {
-    const { styles, items } = this.props;
-
-    const total = items
+  getWeightTotal(items) {
+    return items
       .map(i => i.weight)
       .reduce((a, b) => a + b, 0);
+  }
+
+  render() {
+    const { styles, items } = this.props;
+    const total = this.getWeightTotal(items);
 
     return (
       <tr className={styles.total}>
