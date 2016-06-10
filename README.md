@@ -56,7 +56,7 @@ $ npm run build
 
 ## Roadmap
 
-+ ~Product search API integration~
++ ~~Product search API integration~~
 + Category organization
 + Filter by category
 + Filter by brand
