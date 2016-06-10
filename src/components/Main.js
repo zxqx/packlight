@@ -17,7 +17,9 @@ export default class Main extends Component {
       <div className={styles.main}>
         <Header />
         {/* this will render the child routes */}
-        {this.props.children}
+        <div className={styles.content}>
+          {this.props.children}
+        </div>
       </div>
     );
   }

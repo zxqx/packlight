@@ -1,10 +1,32 @@
 @value colors: './colors.css';
 @value primary from colors;
 
-.h2 {
-  margin: 10px 0 50px;
-  font-size: 48px;
-  font-weight: 300;
+.navbar {
+  position: relative;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  background: primary;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 10, 0.5);
+}
+
+.brand {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  height: 30px;
+}
+
+.heading {
+  display: block;
+  color: #fff;
   letter-spacing: -1px;
-  color: primary;
+  text-decoration: none;
+}
+
+.h2 {
+  margin: 0 0 50px;
+  font-size: 20px;
+  font-weight: 400;
 }

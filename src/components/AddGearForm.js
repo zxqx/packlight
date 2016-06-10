@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import Autocomplete from 'react-autocomplete';
-import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
+import ui from 'redux-ui';
 import throttle from 'lodash.throttle';
 import styles from '../style/add-gear-form.css';
 
