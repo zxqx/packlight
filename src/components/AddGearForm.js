@@ -1,11 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import Autocomplete from 'react-autocomplete';
-import throttle from 'lodash.throttle';
+import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
+import throttle from 'lodash.throttle';
 import styles from '../style/add-gear-form.css';
 
 @cssModules(styles)
+@ui({
+  state: {
+    input: '',
+    selection: null,
+    results: []
+  }
+})
 export default class AddGearForm extends Component {
   static propTypes = {
     styles: PropTypes.object,
@@ -17,12 +25,6 @@ export default class AddGearForm extends Component {
     super();
 
     this._getGearListSuggestions = throttle(this.getGearListSuggestions.bind(this), 400);
-
-    this.state = {
-      input: '',
-      selection: null,
-      results: []
-    };
   }
 
   componentDidMount() {
@@ -30,26 +32,26 @@ export default class AddGearForm extends Component {
   }
 
   handleInputChange(e, input) {
-    this.setState({ input });
+    this.props.updateUI({ input });
     if (!input) return;
 
     this._getGearListSuggestions(input);
   }
 
   selectSuggestion(input) {
-    const selection = this.state.results.find(r => r.name === input);
-    this.setState({ input, selection });
+    const selection = this.props.ui.results.find(r => r.name === input);
+    this.props.updateUI({ input, selection });
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
 
-    const { input, selection } = this.state;
+    const { input, selection } = this.props.ui;
     if (!input || !selection) return;
 
     this.props.addGearItem(selection);
 
-    this.setState({
+    this.props.updateUI({
       input: '',
       selection: null,
       results: []
@@ -58,19 +60,19 @@ export default class AddGearForm extends Component {
 
   async getGearListSuggestions(input) {
     const results = await this.props.getGearListSuggestions(input);
-    this.setState({ results });
+    this.props.updateUI({ results });
   }
 
   render() {
-    const { styles } = this.props;
+    const { styles, ui } = this.props;
 
     return (
       <form onSubmit={this.handleFormSubmit.bind(this)}>
         <Autocomplete
           inputProps={{ placeholder: 'Add gear...' }}
           ref="autocomplete"
-          value={this.state.input}
-          items={this.state.results}
+          value={ui.input}
+          items={ui.results}
           getItemValue={item => item.name}
           onChange={this.handleInputChange.bind(this)}
           onSelect={this.selectSuggestion.bind(this)}
