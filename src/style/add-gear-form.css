@@ -1,10 +1,13 @@
 @value colors: './colors.css';
 @value primary from colors;
 
+form > div {
+  width: 84%;
+}
+
 input[role='combobox'] {
-  margin-top: 20px;
   padding: 8px 10px;
-  width: 320px;
+  width: 100%;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   font-weight: 300;
@@ -12,7 +15,7 @@ input[role='combobox'] {
 
 .suggestion {
   padding: 5px 10px;
-  width: 305px;
+  width: 592px;
   text-align: left;
   border-bottom: 1px solid #eee;
 }
@@ -32,7 +35,7 @@ input[role='combobox'] {
 }
 
 .submit {
-  margin-left: -2px;
+  margin-left: 22px;
   padding: 12px 30px 11px;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 18px;

@@ -14,10 +14,11 @@ export default class Main extends Component {
     const { styles } = this.props;
 
     return (
-      <div className={styles.main}>
+      <div>
         <Header />
-        {/* this will render the child routes */}
-        <div className={styles.content}>
+
+        <div className={styles.main}>
+          {/* this will render the child routes */}
           {this.props.children}
         </div>
       </div>

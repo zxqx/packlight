@@ -26,13 +26,13 @@ export default class AddGearPage extends Component {
     const { gearList, addGearItem, getGearListSuggestions } = this.props;
 
     return (
-      <Grid>
+      <Grid className={styles.grid}>
         <Row>
-          <Col xs={3} md={3} className={styles.container}>
+          <Col xs={3} md={3} className={styles.col}>
             <GearListList />
           </Col>
 
-          <Col xs={6} md={9} className={styles.container}>
+          <Col xs={6} md={9} className={styles.col}>
             <AddGearForm
               addGearItem={addGearItem}
               getGearListSuggestions={getGearListSuggestions}

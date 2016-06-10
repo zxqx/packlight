@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import Autocomplete from 'react-autocomplete';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
@@ -22,8 +21,6 @@ export default class AddGearForm extends Component {
   };
 
   componentDidMount() {
-    findDOMNode(this.refs.autocomplete).querySelector('input').focus();
-
     this._getGearListSuggestions = throttle(this.getGearListSuggestions.bind(this), 400);
   }
 

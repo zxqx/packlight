@@ -1,9 +1,11 @@
-.container {
-  margin: 30px auto 0;
-  padding: 20px 15px;
-  width: 600px;
-  min-height: 440px;
-  text-align: center;
+.grid {
+  width: 50em;
+}
+
+.col {
+  margin: 20px 0 0;
+  padding: 30px 30px 20px;
+  min-height: 300px;
   background: #fff;
   border: 1px solid #e1e1e1;
 }
