@@ -1,11 +1,13 @@
 .name {
   margin: 0 0 5px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .weight {
-  font-weight: 300;
+  font-weight: 400;
   text-align: right;
+  border-bottom: 1px solid #ddd;
 }

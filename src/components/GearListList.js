@@ -13,7 +13,14 @@ export default class GearListList extends Component {
 
     return (
       <div className={styles.container}>
-        Gear Lists
+        <h4 className={styles.h4}>Gear Lists</h4>
+
+        <ul className={styles.list}>
+          <li>Winter 2-Day</li>
+          <li>Overnight</li>
+          <li>Summer Week</li>
+          <li>Car Camping</li>
+        </ul>
       </div>
     );
   }

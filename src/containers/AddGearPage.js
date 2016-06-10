@@ -28,7 +28,7 @@ export default class AddGearPage extends Component {
     return (
       <Grid className={styles.grid}>
         <Row>
-          <Col xs={3} md={3} className={styles.col}>
+          <Col xs={3} md={3} className={styles.aside}>
             <GearListList />
           </Col>
 

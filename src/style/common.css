@@ -9,3 +9,8 @@
   background: #fff;
   border: 1px solid #e1e1e1;
 }
+
+.aside {
+  composes: col;
+  border-right: none;
+}
