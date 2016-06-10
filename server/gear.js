@@ -12,6 +12,6 @@ module.exports = function(keywords) {
   return client.itemSearch({
     keywords,
     searchIndex: 'SportingGoods',
-    responseGroup: 'ItemAttributes'
+    responseGroup: 'ItemAttributes,Images'
   });
 }
