@@ -26,10 +26,6 @@ export default class AddGearPage extends Component {
 
     return (
       <div className={styles.container}>
-        <div className={styles.sidebar}>
-          <GearListList />
-        </div>
-
         <div className={styles.content}>
           <AddGearForm
             addGearItem={addGearItem}

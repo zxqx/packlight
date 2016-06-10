@@ -11,7 +11,7 @@ import styles from '../style/add-gear-form.css';
   state: {
     input: '',
     selection: null,
-    results: []
+    suggestions: []
   }
 })
 export default class AddGearForm extends Component {
@@ -21,14 +21,10 @@ export default class AddGearForm extends Component {
     getGearListSuggestions: PropTypes.func.isRequired
   };
 
-  constructor() {
-    super();
-
-    this._getGearListSuggestions = throttle(this.getGearListSuggestions.bind(this), 400);
-  }
-
   componentDidMount() {
     findDOMNode(this.refs.autocomplete).querySelector('input').focus();
+
+    this._getGearListSuggestions = throttle(this.getGearListSuggestions.bind(this), 400);
   }
 
   handleInputChange(e, input) {
@@ -39,28 +35,23 @@ export default class AddGearForm extends Component {
   }
 
   selectSuggestion(input) {
-    const selection = this.props.ui.results.find(r => r.name === input);
+    const selection = this.props.ui.suggestions.find(r => r.name === input);
     this.props.updateUI({ input, selection });
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
 
-    const { input, selection } = this.props.ui;
-    if (!input || !selection) return;
+    const { selection } = this.props.ui;
+    if (!selection) return;
 
     this.props.addGearItem(selection);
-
-    this.props.updateUI({
-      input: '',
-      selection: null,
-      results: []
-    });
+    this.props.resetUI();
   }
 
   async getGearListSuggestions(input) {
-    const results = await this.props.getGearListSuggestions(input);
-    this.props.updateUI({ results });
+    const suggestions = await this.props.getGearListSuggestions(input);
+    this.props.updateUI({ suggestions });
   }
 
   render() {
@@ -72,7 +63,7 @@ export default class AddGearForm extends Component {
           inputProps={{ placeholder: 'Add gear...' }}
           ref="autocomplete"
           value={ui.input}
-          items={ui.results}
+          items={ui.suggestions}
           getItemValue={item => item.name}
           onChange={this.handleInputChange.bind(this)}
           onSelect={this.selectSuggestion.bind(this)}
