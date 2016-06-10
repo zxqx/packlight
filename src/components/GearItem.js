@@ -14,6 +14,7 @@ export default class GearItem extends Component {
 
     return (
       <tr>
+        <td className={styles.image}><img src={item.image} /></td>
         <td className={styles.name}>{item.name}</td>
         <td className={styles.weight}>{item.weight} lb</td>
       </tr>

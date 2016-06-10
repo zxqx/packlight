@@ -10,6 +10,10 @@ function getProductName(product) {
   return product.ItemAttributes[0].Title[0];
 }
 
+function getProductImage(product) {
+  return product.SmallImage[0].URL[0];
+}
+
 function getProductWeightUnit(product) {
   return product.ItemAttributes[0].ItemDimensions[0].Weight[0].$.Units;
 }
@@ -38,6 +42,7 @@ function processData(data) {
 
       return {
         name: getProductName(product),
+        image: getProductImage(product),
         weight: getWeightInLbs(unit, weight)
       };
     });

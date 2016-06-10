@@ -1,13 +1,28 @@
+.cell {
+  border-bottom: 1px solid #ddd;
+}
+
+.image {
+  composes: cell;
+  width: 40px;
+  text-align: center;
+}
+
+img {
+  max-height: 30px;
+  max-width: 100%;
+}
+
 .name {
+  composes: cell;
   margin: 0 0 5px;
   font-size: 18px;
   font-weight: 400;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
 .weight {
+  composes: cell;
   font-weight: 400;
   text-align: right;
-  border-bottom: 1px solid #ddd;
 }
