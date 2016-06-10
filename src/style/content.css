@@ -1,13 +1,21 @@
 .container {
   margin: 0 auto;
-  width: 1000px;
+  width: 1200px;
   display: flex;
 }
+
 .content {
   margin: 30px auto 0;
   padding: 20px 15px;
-  width: 500px;
+  width: 800px;
+  height: 440px;
   text-align: center;
   background: #fff;
   border: 1px solid #e1e1e1;
+}
+
+.sidebar {
+  composes: content;
+  width: 400px;
+  border-right: none;
 }

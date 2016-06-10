@@ -13,7 +13,7 @@ export default class GearListList extends Component {
 
     return (
       <div className={styles.container}>
-        asdad
+        Gear Lists
       </div>
     );
   }
