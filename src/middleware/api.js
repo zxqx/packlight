@@ -6,6 +6,10 @@ function productHasWeightAttribute(product) {
     product.ItemAttributes[0].ItemDimensions[0].Weight;
 }
 
+function getProductId(product) {
+  return product.ASIN[0];
+}
+
 function getProductName(product) {
   return product.ItemAttributes[0].Title[0];
 }
@@ -36,11 +40,12 @@ function getWeightInLbs(unit, weight) {
 function processData(data) {
   return data
     .filter(product => productHasWeightAttribute(product))
-    .map(product => {
+    .map((product, index) => {
       const unit = getProductWeightUnit(product);
       const weight = getProductWeight(product);
 
       return {
+        id: getProductId(product),
         name: getProductName(product),
         image: getProductImage(product),
         weight: getWeightInLbs(unit, weight)

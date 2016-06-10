@@ -6,8 +6,13 @@ import styles from '../style/gear-item.scss';
 export default class GearItem extends Component {
   static propTypes = {
     styles: PropTypes.object,
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
+    removeGearItem: PropTypes.func.isRequired
   };
+
+  removeGearItem() {
+    this.props.removeGearItem(this.props.item);
+  }
 
   render() {
     const { styles, item } = this.props;
@@ -19,6 +24,10 @@ export default class GearItem extends Component {
         </td>
         <td className={styles.name}>{item.name}</td>
         <td className={styles.weight}>{item.weight} lb</td>
+
+        <td className={styles.remove}>
+          <button onClick={this.removeGearItem.bind(this)}>Remove</button>
+        </td>
       </tr>
     );
   }

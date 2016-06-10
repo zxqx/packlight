@@ -22,10 +22,13 @@ export default class GearWeightTotal extends Component {
     return (
       <tr className={styles.total}>
         <td></td>
+
         <td>Total</td>
         <td className={styles.weight}>
           <span>{total.toFixed(3)} lb</span>
         </td>
+
+        <td></td>
       </tr>
     );
   }

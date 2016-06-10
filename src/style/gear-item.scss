@@ -26,3 +26,7 @@
   font-weight: 400;
   text-align: right;
 }
+
+.remove {
+  composes: cell;
+}

@@ -19,11 +19,12 @@ export default class AddGearPage extends Component {
   static propTypes = {
     gearList: PropTypes.array.isRequired,
     addGearItem: PropTypes.func.isRequired,
+    removeGearItem: PropTypes.func.isRequired,
     getGearListSuggestions: PropTypes.func.isRequired
   };
 
   render() {
-    const { gearList, addGearItem, getGearListSuggestions } = this.props;
+    const { gearList, addGearItem, removeGearItem, getGearListSuggestions } = this.props;
 
     return (
       <Grid className={styles.grid}>
@@ -38,7 +39,10 @@ export default class AddGearPage extends Component {
               getGearListSuggestions={getGearListSuggestions}
             />
 
-            <GearList items={gearList} />
+            <GearList
+              items={gearList}
+              removeGearItem={removeGearItem}
+            />
           </Col>
         </Row>
       </Grid>
