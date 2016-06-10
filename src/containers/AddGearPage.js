@@ -10,11 +10,11 @@ import * as GearListActions from '../actions/gearList';
 import wrapActionCreators from '../utils/wrapActionCreators';
 import styles from '../style/common.scss';
 
+@cssModules(styles)
+@ui({ key: 'addGearPage' })
 @connect(state => ({
   gearList: state.gearList
 }), wrapActionCreators(GearListActions))
-@ui({ key: 'addGearPage' })
-@cssModules(styles)
 export default class AddGearPage extends Component {
   static propTypes = {
     gearList: PropTypes.array.isRequired,
