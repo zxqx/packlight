@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import AddGearForm from '../components/AddGearForm';
 import GearList from '../components/GearList';
 import GearListList from '../components/GearListList';
 import * as GearListActions from '../actions/gearList';
 import wrapActionCreators from '../utils/wrapActionCreators';
-import styles from '../style/content.css';
+import styles from '../style/common.css';
 
 @connect(state => ({
   gearList: state.gearList
@@ -25,16 +26,22 @@ export default class AddGearPage extends Component {
     const { gearList, addGearItem, getGearListSuggestions } = this.props;
 
     return (
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <AddGearForm
-            addGearItem={addGearItem}
-            getGearListSuggestions={getGearListSuggestions}
-          />
+      <Grid>
+        <Row>
+          <Col xs={3} md={3} className={styles.container}>
+            <GearListList />
+          </Col>
 
-          <GearList items={gearList} />
-        </div>
-      </div>
+          <Col xs={6} md={9} className={styles.container}>
+            <AddGearForm
+              addGearItem={addGearItem}
+              getGearListSuggestions={getGearListSuggestions}
+            />
+
+            <GearList items={gearList} />
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

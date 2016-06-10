@@ -28,7 +28,7 @@ module.exports = {
       template: './build/index.html',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('index.css', {
+    new ExtractTextPlugin('index.[hash].css', {
       allChunks: true
     })
   ],

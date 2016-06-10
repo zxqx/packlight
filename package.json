@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/index.js",
+    "start:prod": "cross-env NODE_ENV=production node server/index.js",
     "clean": "rimraf lib dist coverage",
     "lint": "eslint src test",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
@@ -65,12 +66,15 @@
   "dependencies": {
     "amazon-product-api": "^0.3.10",
     "babel-polyfill": "^6.9.1",
+    "classnames": "^2.2.5",
     "dotenv": "^2.0.0",
+    "flexboxgrid": "^6.3.0",
     "fuse.js": "^2.2.0",
     "lodash.throttle": "^4.0.1",
     "react": "^15.0.0",
     "react-autocomplete": "https://github.com/StuartApp/react-autocomplete",
     "react-dom": "^15.0.0",
+    "react-flexbox-grid": "^0.9.6",
     "react-redux": "^4.4.0",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.0",
