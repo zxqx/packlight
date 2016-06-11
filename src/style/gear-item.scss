@@ -46,7 +46,7 @@
       width: 17px;
       height: 14px;
       display: inline-block;
-      border: 0;
+      border: 1px solid transparent;
       border-radius: 100%;
       color: #fff;
       background: #222;
@@ -55,7 +55,9 @@
     }
 
     &:hover:after {
-      background: #444;
+      background: #fff;
+      color: #222;
+      border: 1px solid #555;
       cursor: pointer;
     }
   }
