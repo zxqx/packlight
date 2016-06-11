@@ -26,7 +26,7 @@ export default class GearItem extends Component {
         <td className={styles.weight}>{item.weight} lb</td>
 
         <td className={styles.remove}>
-          <button onClick={this.removeGearItem.bind(this)}>Remove</button>
+          <button onClick={this.removeGearItem.bind(this)}></button>
         </td>
       </tr>
     );
