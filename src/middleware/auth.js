@@ -8,6 +8,7 @@ const config = {
 
 firebase.initializeApp(config);
 
+// TODO - Promisify this
 export function fetchUserInfo(cb) {
   return firebase.auth().onAuthStateChanged(res => {
     if (res) {

@@ -12,9 +12,9 @@ import styles from '../style/login-form.scss';
 })
 export default class LoginForm extends Component {
   static propTypes = {
+    styles: PropTypes.object,
     user: PropTypes.object.isRequired,
-    loginUser: PropTypes.func.isRequired,
-    styles: PropTypes.object
+    loginUser: PropTypes.func.isRequired
   };
 
   handleChange(e) {
@@ -40,12 +40,12 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.email} type="email" id="email" name="email" onChange={this.handleChange.bind(this)} />
+            <input className={styles.email} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
           </div>
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <input className={styles.password} type="password" id="password" name="password" onChange={this.handleChange.bind(this)} />
+            <input className={styles.password} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
           </div>
 
           <div className={styles.field}>

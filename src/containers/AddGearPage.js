@@ -6,8 +6,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import AddGearForm from '../components/AddGearForm';
 import GearList from '../components/GearList';
 import GearListList from '../components/GearListList';
-import * as GearListActions from '../actions/gearList';
-import wrapActionCreators from '../utils/wrapActionCreators';
+import * as GearListActions from '../actions/gear-list';
+import wrapActionCreators from '../utils/wrap-action-creators';
 import styles from '../style/common.scss';
 
 @cssModules(styles)

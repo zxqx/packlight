@@ -53,7 +53,6 @@ function processData(data) {
     });
 }
 
-
 export async function fetchGearListSuggestions(keywords) {
   const res = await fetch(`/api/gear/${keywords}`);
 

@@ -4,7 +4,7 @@ import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
 import LoginForm from '../components/LoginForm';
 import * as UserActions from '../actions/user';
-import wrapActionCreators from '../utils/wrapActionCreators';
+import wrapActionCreators from '../utils/wrap-action-creators';
 
 @ui({ key: 'loginPage' })
 @connect(state => ({

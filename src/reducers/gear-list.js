@@ -1,5 +1,5 @@
 import { createReducer } from 'redux-create-reducer';
-import { ADD_GEAR_ITEM, REMOVE_GEAR_ITEM } from '../actions/gearList';
+import { ADD_GEAR_ITEM, REMOVE_GEAR_ITEM } from '../actions/gear-list';
 
 const initialState = [
   {

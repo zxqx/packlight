@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import cssModules from 'react-css-modules';
 import Header from '../components/Header';
 import * as UserActions from '../actions/user';
-import wrapActionCreators from '../utils/wrapActionCreators';
+import wrapActionCreators from '../utils/wrap-action-creators';
 import styles from '../style/index.scss';
 
 @connect(state => ({

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import gearList from './gearList';
+import gearList from './gear-list';
 import user from './user';
 import { reducer as uiReducer } from 'redux-ui';
 
