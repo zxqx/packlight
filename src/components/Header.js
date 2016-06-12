@@ -10,7 +10,7 @@ export default class Header extends Component {
   };
 
   render() {
-    const { styles } = this.props;
+    const { styles, user } = this.props;
 
     return (
       <div className={styles.navbar}>
@@ -18,6 +18,10 @@ export default class Header extends Component {
           <Link to="/" className={styles.heading}>
             <h2 className={styles.h2}>packlight</h2>
           </Link>
+        </div>
+
+        <div className={styles.user}>
+          {user.email}
         </div>
       </div>
     );

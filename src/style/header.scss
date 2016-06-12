@@ -11,7 +11,6 @@
 .brand {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
   height: 30px;
 }
 
@@ -26,4 +25,13 @@
   margin: 0 0 50px;
   font-size: 20px;
   font-weight: 400;
+}
+
+.user {
+  position: relative;
+  top: -29px;
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  color: #fff;
 }
