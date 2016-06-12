@@ -77,6 +77,8 @@ $ npm run build
 + ~~User authentication~~
 + ~~User creation~~
 + ~~Protected routes~~
++ Login form validation
++ Signup form validation
 + Gear list persistence
 + ~~Circle CI integration~~
 + ~~Set up heroku deployment~~
