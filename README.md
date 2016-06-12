@@ -64,7 +64,7 @@ $ npm run build
 + Filter by weight range
 + Create new list
 + lb -> kg conversion
-+ Remove gear item
++ ~~Remove gear item~~
 + Add custom gear item
 + Copy list
 + Share list
@@ -73,7 +73,9 @@ $ npm run build
 + Gear suggestions
 + Create checklist
 + Quantity control
-+ User creation/authentication
++ ~~User authentication~~
++ User creation
++ Protected routes
 + Gear list persistence
 + Circle CI integration
 + Set up heroku pipeline and deployment

@@ -21,16 +21,16 @@ export function fetchUserInfo(cb) {
   });
 }
 
-export async function deauthenticate() {
-  return await firebase.auth().signOut();
-}
-
 export async function authenticate(email, password) {
-  let res = await firebase.auth().signInWithEmailAndPassword(email, password);
-  let avatar = await gravatar.url(email);
+  const res = await firebase.auth().signInWithEmailAndPassword(email, password);
+  const avatar = await gravatar.url(email);
 
   return {
     email: res.email,
     avatar
   };
+}
+
+export async function deauthenticate() {
+  return await firebase.auth().signOut();
 }
