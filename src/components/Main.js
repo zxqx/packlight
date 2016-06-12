@@ -14,12 +14,8 @@ export default class Main extends Component {
   static propTypes = {
     styles: PropTypes.object,
     user: PropTypes.object,
-    children: PropTypes.any.isRequired
+    children: PropTypes.any
   };
-
-  componentDidMount() {
-    this.props.dispatch(UserActions.getUserInfo());
-  }
 
   render() {
     const { styles, user, logoutUser } = this.props;

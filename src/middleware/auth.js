@@ -9,7 +9,7 @@ const config = {
 firebase.initializeApp(config);
 
 // TODO - Promisify this
-export function fetchUserInfo(cb) {
+export function checkAuthentication(cb) {
   return firebase.auth().onAuthStateChanged(res => {
     if (res) {
       let avatar = gravatar.url(res.email);
@@ -18,6 +18,9 @@ export function fetchUserInfo(cb) {
         email: res.email,
         avatar
       });
+    }
+    else {
+      cb({});
     }
   });
 }

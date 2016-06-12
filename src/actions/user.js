@@ -1,8 +1,10 @@
 import { browserHistory } from 'react-router';
-import { authenticate, deauthenticate, fetchUserInfo } from '../middleware/auth';
+import { authenticate, deauthenticate, checkAuthentication } from '../middleware/auth';
 import gravatar from 'gravatar';
 
 export const LOGIN_USER = 'LOGIN_USER';
+export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 
@@ -13,15 +15,17 @@ export function updateUser(payload) {
   };
 }
 
-export function getUserInfo() {
-  return dispatch => {
-    try {
-      fetchUserInfo(user => dispatch(updateUser(user)));
-    }
-    catch (e) {
-      throw new Error(e);
-    }
-  }
+export function loginUserSuccess(payload) {
+  return {
+    type: LOGIN_USER_SUCCESS,
+    payload
+  };
+}
+
+export function loginUserFailure() {
+  return {
+    type: LOGIN_USER_FAILURE
+  };
 }
 
 export function loginUser(email, password) {
@@ -31,16 +35,36 @@ export function loginUser(email, password) {
 
       browserHistory.push('/');
 
-      return dispatch(updateUser({
+      return dispatch(loginUserSuccess({
         email: res.email,
         avatar: res.avatar
       }));
+    }
+    catch (e) {
+      dispatch(loginUserFailure());
+    }
+  }
+}
+
+export function checkAuth() {
+  return dispatch => {
+    try {
+      checkAuthentication(user => {
+        if (user.email) {
+          return dispatch(loginUserSuccess(user));
+        }
+        else {
+          browserHistory.push('/login');
+          return dispatch(loginUserFailure());
+        }
+      });
     }
     catch (e) {
       throw new Error(e);
     }
   }
 }
+
 
 export function logoutUser() {
   return async dispatch => {
