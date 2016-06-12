@@ -5,7 +5,7 @@ dotenv.load();
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: 'project-6839808434370523602.firebaseapp.com'
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN
 };
 
 firebase.initializeApp(config);
