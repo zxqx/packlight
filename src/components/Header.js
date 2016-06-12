@@ -29,7 +29,11 @@ export default class Header extends Component {
         </div>
 
         <Dropdown className={styles.user}>
-          <DropdownTrigger>{user.email}</DropdownTrigger>
+          <DropdownTrigger>
+            <img className={styles.avatar} src={user.avatar} alt={user.email} />
+            {user.email}
+            <span className={styles.caret}>&#9660;</span>
+          </DropdownTrigger>
           <DropdownContent styleName='dropdown-content'>
             <ul>
               <li>

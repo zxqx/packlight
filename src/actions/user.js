@@ -1,4 +1,5 @@
 import { authenticate, deauthenticate, fetchUserInfo } from '../middleware/auth';
+import gravatar from 'gravatar';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
@@ -40,7 +41,11 @@ export function loginUser(email, password) {
   return async dispatch => {
     try {
       const res = await authenticate(email, password);
-      return dispatch(updateUser({ email: res.email }));
+
+      return dispatch(updateUser({
+        email: res.email,
+        avatar: res.avatar
+      }));
     }
     catch (e) {
       throw new Error(e);

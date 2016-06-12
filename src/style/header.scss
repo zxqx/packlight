@@ -40,10 +40,26 @@
   }
 }
 
+.avatar {
+  width: 20px;
+  border-radius: 2px;
+  position: relative;
+  top: 5px;
+  margin-right: 8px;
+}
+
+.caret {
+  position: relative;
+  top: -3px;
+  margin-left: 5px;
+  font-size: 5px;
+  color: #ddd;
+}
+
 .dropdown-content {
   ul {
     position: relative;
-    margin-top: 12px;
+    margin-top: 7px;
     padding-left: 0;
     width: 100%;
     float: right;
@@ -58,7 +74,7 @@
 
     a {
       padding: 10px 18px;
-      width: 90px;
+      width: 130px;
       display: inline-block;
       color: #222;
       text-align: left;

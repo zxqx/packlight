@@ -73,6 +73,7 @@
     "firebase": "^3.0.4",
     "flexboxgrid": "^6.3.0",
     "fuse.js": "^2.2.0",
+    "gravatar": "^1.5.2",
     "lodash.throttle": "^4.0.1",
     "react": "^15.0.0",
     "react-autocomplete": "https://github.com/StuartApp/react-autocomplete",
