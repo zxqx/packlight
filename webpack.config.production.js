@@ -50,7 +50,6 @@ module.exports = {
       {
         test: /Dropdown.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
-        ]
       }
     ]
   },
