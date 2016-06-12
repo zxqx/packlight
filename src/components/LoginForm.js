@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
-import styles from '../style/login.scss';
+import styles from '../style/login-form.scss';
 
 @cssModules(styles)
 @ui({
@@ -40,12 +40,12 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.email} type="email" name="email" onChange={this.handleChange.bind(this)} />
+            <input className={styles.email} type="email" id="email" onChange={this.handleChange.bind(this)} />
           </div>
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <input className={styles.password} type="password" name="password" onChange={this.handleChange.bind(this)} />
+            <input className={styles.password} type="password" id="password" onChange={this.handleChange.bind(this)} />
           </div>
 
           <div className={styles.field}>

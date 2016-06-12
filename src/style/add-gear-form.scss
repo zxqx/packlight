@@ -2,6 +2,11 @@ form > div {
   width: 84%;
 }
 
+/* hide autocomplete dropdown when no results */
+form > div > div:empty {
+  display: none;
+}
+
 .suggestion {
   padding: 5px 10px;
   width: 592px;
@@ -24,5 +29,5 @@ form > div {
 }
 
 .submit {
-  margin-left: 12px;
+  margin-left: 17px;
 }
