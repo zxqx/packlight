@@ -1,6 +1,7 @@
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
 
 .cell {
+  font-size: 18px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -18,7 +19,6 @@
 .name {
   composes: cell;
   margin: 0 0 5px;
-  font-size: 18px;
   font-weight: 400;
   text-align: left;
 }
@@ -37,6 +37,7 @@
     padding: 0;
     background: none;
     border: none;
+    outline: none;
 
     &:after {
       content: '\F00D';
