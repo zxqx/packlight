@@ -1,22 +1,26 @@
 import { createReducer } from 'redux-create-reducer';
-import { LOGIN_USER, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE, LOGOUT_USER, UPDATE_USER } from '../actions/user';
+import { LOGIN_USER_REQUEST, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE, LOGOUT_USER, UPDATE_USER } from '../actions/user';
 
-const initialState = {};
+const initialState = {
+  attemptedAuthentication: false
+};
 
 export default createReducer(initialState, {
-  [LOGIN_USER](state, action) {
+  [LOGIN_USER_REQUEST](state, action) {
     return {
-      ...action.payload
+      attemptedAuthentication: true
     };
   },
   [LOGIN_USER_SUCCESS](state, action) {
     return {
+      ...state,
       isAuthenticated: true,
       ...action.payload
     };
   },
   [LOGIN_USER_FAILURE](state, action) {
     return {
+      ...state,
       isAuthenticated: false
     };
   },

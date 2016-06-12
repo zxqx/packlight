@@ -29,7 +29,7 @@ export default class Header extends Component {
             </Link>
           </div>
 
-          {user.email ?
+          {user.isAuthenticated ?
             <Dropdown className={styles.user}>
               <DropdownTrigger>
                 <img className={styles.avatar} src={user.avatar} alt={user.email} />
@@ -44,9 +44,11 @@ export default class Header extends Component {
                 </ul>
               </DropdownContent>
             </Dropdown>
+          : null}
 
-            : <Link to="/login" styleName='login-btn'>Log in</Link>
-          }
+          {user.isAuthenticated === false ?
+            <Link to="/login" styleName='login-btn'>Log in</Link>
+          : null}
         </div>
       </div>
     );
