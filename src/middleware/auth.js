@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 export function fetchUserInfo(cb) {
   return firebase.auth().onAuthStateChanged(res => {
-    if (res.email) {
+    if (res) {
       let avatar = gravatar.url(res.email);
 
       cb({

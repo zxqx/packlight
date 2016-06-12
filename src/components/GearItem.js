@@ -11,14 +11,18 @@ export default class GearItem extends Component {
   };
 
   removeGearItem() {
-    this.props.removeGearItem(this.props.item);
+    this.refs.row.classList.add(styles.removed);
+    setTimeout(() => {
+      this.refs.row.classList.remove(styles.removed);
+      this.props.removeGearItem(this.props.item);
+    }, 200);
   }
 
   render() {
     const { styles, item } = this.props;
 
     return (
-      <tr>
+      <tr ref="row">
         <td className={styles.image}>
           <img src={item.image} className={styles.thumbnail} />
         </td>
