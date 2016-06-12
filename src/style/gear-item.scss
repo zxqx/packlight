@@ -3,15 +3,15 @@
 .cell {
   font-size: 18px;
   border-bottom: 1px solid #ddd;
-  opacity: 1;
-  left: 0;
 }
 
-.removed td {
-  position: relative;
-  left: 1000px;
+tr {
+  opacity: 1;
+}
+
+.removed {
   opacity: 0;
-  transition: all 0.3s;
+  transition: opacity 0.3s;
 }
 
 .image {
