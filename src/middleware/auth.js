@@ -25,6 +25,16 @@ export function checkAuthentication(cb) {
   });
 }
 
+export async function createUserAccount(email, password) {
+  const res = await firebase.auth().createUserWithEmailAndPassword(email, password);
+  const avatar = await gravatar.url(email);
+
+  return {
+    email: res.email,
+    avatar
+  };
+}
+
 export async function authenticate(email, password) {
   const res = await firebase.auth().signInWithEmailAndPassword(email, password);
   const avatar = await gravatar.url(email);

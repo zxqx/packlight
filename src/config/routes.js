@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import App from '../containers/App';
 import LoginPage from '../containers/LoginPage';
+import SignUpPage from '../containers/SignUpPage';
 import AddGearPage from '../containers/AddGearPage';
 import AnotherPage from '../containers/AnotherPage';
 import NotFoundPage from '../containers/NotFoundPage';
@@ -15,6 +16,7 @@ export default (store) => {
   return (
     <Route component={App}>
       <Route path="/login" component={LoginPage} />
+      <Route path="/signup" component={SignUpPage} />
       <Route path="/" onEnter={requireAuthentication} component={AddGearPage} />
       <Route path="/another" component={AnotherPage} />
       <Route path="*" component={NotFoundPage} />

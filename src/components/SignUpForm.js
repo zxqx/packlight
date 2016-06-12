@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
-import styles from '../style/login-form.scss';
+import styles from '../style/signup-form.scss';
 
 @cssModules(styles)
 @ui({
@@ -11,11 +11,11 @@ import styles from '../style/login-form.scss';
     password: ''
   }
 })
-export default class LoginForm extends Component {
+export default class SignUpForm extends Component {
   static propTypes = {
     styles: PropTypes.object,
     user: PropTypes.object.isRequired,
-    loginUser: PropTypes.func.isRequired
+    createUser: PropTypes.func.isRequired
   };
 
   handleChange(e) {
@@ -28,15 +28,15 @@ export default class LoginForm extends Component {
     e.preventDefault();
 
     const { email, password } = this.props.ui;
-    this.props.loginUser(email, password);
+    this.props.createUser(email, password);
   }
 
   render() {
     const { styles, ui } = this.props;
 
     return (
-      <div className={styles.login}>
-        <h2 className={styles.h2}>Log in</h2>
+      <div className={styles.signup}>
+        <h2 className={styles.h2}>Sign up</h2>
 
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
@@ -50,9 +50,8 @@ export default class LoginForm extends Component {
           </div>
 
           <div className={styles.field}>
-            <input className={styles.submit} type="submit" value="Log in" />
-            <Link to="signup" className={styles['sign-up']}>Don't have an account? Sign up.
-            </Link>
+            <input className={styles.submit} type="submit" value="Sign up" />
+            <Link to="/login" className={styles.login}>Already have an account? Log in.</Link>
           </div>
         </form>
       </div>

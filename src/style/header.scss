@@ -102,8 +102,15 @@
   padding: 2px 20px;
   float: right;
   font-size: 14px;
-  text-decoration: none;
   border: 1px solid #bbb;
   border-radius: 2px;
   color: #fff;
+
+  &:hover {
+    background: #fff;
+    color: #222;
+    text-decoration: none;
+    border-color: transparent;
+    transition: all 0.2s;
+  }
 }

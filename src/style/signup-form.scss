@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-.login {
+.signup {
   margin: 20px auto 0;
   padding: 40px 30px;
   width: 600px;
@@ -34,7 +34,7 @@ input[type="password"].password {
   margin-top: 5px;
 }
 
-.sign-up {
+.login {
   margin-left: 15px;
   font-size: 16px;
   color: $primary;
