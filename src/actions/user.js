@@ -1,6 +1,5 @@
 import { browserHistory } from 'react-router';
 import { authenticate, deauthenticate, checkAuthentication } from '../middleware/auth';
-import gravatar from 'gravatar';
 
 export const LOGIN_USER_REQUEST = 'LOGIN_USER_REQUEST';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
