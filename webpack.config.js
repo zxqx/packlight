@@ -38,14 +38,15 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /.scss$/,
+        test: /\.css|scss$/,
         loaders: [
           'style?sourceMap',
           'css?sourceMap&modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!sass'
-        ]
+        ],
+        exclude: /Dropdown.css$/
       },
       {
-        test: /\.css$/,
+        test: /Dropdown.css$/,
         loaders: [
           'style?sourceMap',
           'css?sourceMap&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'

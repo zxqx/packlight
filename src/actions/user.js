@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router';
 import { authenticate, deauthenticate, fetchUserInfo } from '../middleware/auth';
 import gravatar from 'gravatar';
 
@@ -23,13 +24,17 @@ export function getUserInfo() {
   }
 }
 
-export function logoutUser() {
+export function loginUser(email, password) {
   return async dispatch => {
     try {
-      await deauthenticate();
-      return dispatch({
-        type: LOGOUT_USER
-      });
+      const res = await authenticate(email, password);
+
+      browserHistory.push('/');
+
+      return dispatch(updateUser({
+        email: res.email,
+        avatar: res.avatar
+      }));
     }
     catch (e) {
       throw new Error(e);
@@ -37,15 +42,16 @@ export function logoutUser() {
   }
 }
 
-export function loginUser(email, password) {
+export function logoutUser() {
   return async dispatch => {
     try {
-      const res = await authenticate(email, password);
+      await deauthenticate();
 
-      return dispatch(updateUser({
-        email: res.email,
-        avatar: res.avatar
-      }));
+      browserHistory.push('/login');
+
+      return dispatch({
+        type: LOGOUT_USER
+      });
     }
     catch (e) {
       throw new Error(e);

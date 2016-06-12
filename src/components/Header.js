@@ -22,26 +22,32 @@ export default class Header extends Component {
 
     return (
       <div className={styles.navbar}>
-        <div className={styles.brand}>
-          <Link to="/" className={styles.heading}>
-            <h2 className={styles.h2}>packlight</h2>
-          </Link>
-        </div>
+        <div className={styles.content}>
+          <div className={styles.brand}>
+            <Link to="/" className={styles.heading}>
+              <h2 className={styles.h2}>packlight</h2>
+            </Link>
+          </div>
 
-        <Dropdown className={styles.user}>
-          <DropdownTrigger>
-            <img className={styles.avatar} src={user.avatar} alt={user.email} />
-            {user.email}
-            <span className={styles.caret}>&#9660;</span>
-          </DropdownTrigger>
-          <DropdownContent styleName='dropdown-content'>
-            <ul>
-              <li>
-                <a onClick={this.logoutUser.bind(this)}>Log Out</a>
-              </li>
-            </ul>
-          </DropdownContent>
-        </Dropdown>
+          {user.email ?
+            <Dropdown className={styles.user}>
+              <DropdownTrigger>
+                <img className={styles.avatar} src={user.avatar} alt={user.email} />
+                {user.email}
+                <span className={styles.caret}>&#9660;</span>
+              </DropdownTrigger>
+              <DropdownContent styleName='dropdown-content'>
+                <ul>
+                  <li>
+                    <a onClick={this.logoutUser.bind(this)}>Log Out</a>
+                  </li>
+                </ul>
+              </DropdownContent>
+            </Dropdown>
+
+            : <Link to="/login" styleName='login-btn'>Log in</Link>
+          }
+        </div>
       </div>
     );
   }
