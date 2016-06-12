@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
+import InputPassword from 'react-ux-password-field';
 import styles from '../style/signup-form.scss';
 
 @cssModules(styles)
@@ -24,6 +25,14 @@ export default class SignUpForm extends Component {
     this.props.updateUI(nextState);
   }
 
+  handlePasswordChange() {
+    const { name, value } = this.refs.password.refs.password;
+    let nextState = {};
+    nextState[name] = value;
+
+    this.props.updateUI(nextState);
+  }
+
   handleFormSubmit(e) {
     e.preventDefault();
 
@@ -41,12 +50,12 @@ export default class SignUpForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.email} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
+            <input className={styles.email} type="email" id="email" name="email" value={ui.email} onChange={this.handleChange.bind(this)} />
           </div>
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <input className={styles.password} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
+            <InputPassword className={styles.password} onChange={this.handlePasswordChange.bind(this)} infoBar={false} unMaskTime={500} ref="password" id="password" name="password" />
           </div>
 
           <div className={styles.field}>

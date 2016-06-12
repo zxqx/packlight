@@ -7,6 +7,17 @@
   min-height: 300px;
   background: #fff;
   border: 1px solid #e1e1e1;
+
+  /* reset react-ux-password-field container styles */
+  div[class="passwordField"] {
+    display: block !important;
+  }
+
+  /* reset react-ux-password-field input styles */
+  input[type="text"].password {
+    font-weight: 300 !important;
+    color: #222 !important;
+  }
 }
 
 .h2 {
@@ -25,6 +36,7 @@
 }
 
 input[type="email"].email,
+input[type="text"].password,
 input[type="password"].password {
   margin-bottom: 20px;
   display: block;

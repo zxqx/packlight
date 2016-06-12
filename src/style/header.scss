@@ -32,8 +32,8 @@
   font-weight: 400;
 
   &:hover {
-    transition: color 0.2s;
     color: #eee;
+    transition: color 0.2s;
   }
 }
 
@@ -46,7 +46,12 @@
 
   a {
     color: #fff;
-    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: #eee;
+      transition: color 0.2s;
+    }
   }
 }
 
@@ -90,6 +95,7 @@
       text-align: left;
 
       &:hover {
+        color: inherit;
         cursor: pointer;
       }
     }
