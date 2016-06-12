@@ -70,6 +70,7 @@
     "babel-polyfill": "^6.9.1",
     "classnames": "^2.2.5",
     "dotenv": "^2.0.0",
+    "firebase": "^3.0.4",
     "flexboxgrid": "^6.3.0",
     "fuse.js": "^2.2.0",
     "lodash.throttle": "^4.0.1",
