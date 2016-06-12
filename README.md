@@ -68,6 +68,7 @@ $ npm run build
 + Add custom gear item
 + Copy list
 + Share list
++ Clear list
 + Weight threshold
 + Weight analyzer
 + Gear suggestions

@@ -41,16 +41,16 @@
     &:after {
       content: '\F00D';
       position: relative;
-      top: -3px;
-      padding-top: 3px;
-      width: 17px;
-      height: 14px;
+      top: -4px;
+      padding-top: 2px;
+      width: 14px;
+      height: 12px;
       display: inline-block;
       border: 1px solid transparent;
       border-radius: 100%;
       color: #fff;
       background: #222;
-      font: normal normal normal 11px/1 FontAwesome;
+      font: normal normal normal 9px/1 FontAwesome;
       text-rendering: auto;
     }
 
