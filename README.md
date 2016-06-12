@@ -75,7 +75,7 @@ $ npm run build
 + Create checklist
 + Quantity control
 + ~~User authentication~~
-+ User creation
++ ~~User creation~~
 + ~~Protected routes~~
 + Gear list persistence
 + ~~Circle CI integration~~
