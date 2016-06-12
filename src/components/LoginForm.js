@@ -34,15 +34,25 @@ export default class LoginForm extends Component {
     const { styles, ui } = this.props;
 
     return (
-      <form onSubmit={this.handleFormSubmit.bind(this)}>
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" onChange={this.handleChange.bind(this)} />
+      <div className={styles.login}>
+        <h2 className={styles.h2}>Log in</h2>
 
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" onChange={this.handleChange.bind(this)} />
+        <form onSubmit={this.handleFormSubmit.bind(this)}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="email">Email</label>
+            <input className={styles.email} type="email" name="email" onChange={this.handleChange.bind(this)} />
+          </div>
 
-        <input className={styles.submit} type="submit" value="Log in" />
-      </form>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="password">Password</label>
+            <input className={styles.password} type="password" name="password" onChange={this.handleChange.bind(this)} />
+          </div>
+
+          <div className={styles.field}>
+            <input className={styles.submit} type="submit" value="Log in" />
+          </div>
+        </form>
+      </div>
     );
   }
 }

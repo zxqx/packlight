@@ -1,0 +1,32 @@
+.login {
+  margin: 30px auto 0;
+  padding: 40px 30px;
+  width: 600px;
+  min-height: 300px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+}
+
+.h2 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.field {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="email"].email,
+input[type="password"].password {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.submit {
+}

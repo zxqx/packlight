@@ -11,3 +11,29 @@ body {
 
 .main {
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[role="combobox"] {
+  padding: 8px 10px;
+  width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+input[type="submit"] {
+  padding: 12px 30px 11px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  background: #222;
+  border: 0;
+
+  &:hover {
+    background: #000;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+}

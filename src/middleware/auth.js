@@ -7,12 +7,16 @@ const config = {
 
 firebase.initializeApp(config);
 
-export async function fetchUserInfo(cb) {
+export function fetchUserInfo(cb) {
   return firebase.auth().onAuthStateChanged(user => {
     cb(user);
   });
 }
 
+export async function deauthenticate() {
+  return await firebase.auth().signOut();
+}
+
 export async function authenticate(email, password) {
-  return await firebase.auth().signInWithEmailAndPassword(email, password)
+  return await firebase.auth().signInWithEmailAndPassword(email, password);
 }

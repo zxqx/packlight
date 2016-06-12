@@ -33,5 +33,36 @@
   display: inline-block;
   float: right;
   font-size: 14px;
-  color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
+
+.dropdown-content {
+  ul {
+    position: relative;
+    margin-top: 12px;
+    padding-left: 0;
+    width: 100%;
+    float: right;
+    background: #fff;
+    list-style: none;
+    border: 1px solid #eee;
+    border-top: none;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 1px 1px 3px #ccc;
+
+    a {
+      padding: 10px 18px;
+      width: 90px;
+      display: inline-block;
+      color: #222;
+      text-align: left;
+    }
+  }
+}
+
