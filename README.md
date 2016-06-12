@@ -76,7 +76,7 @@ $ npm run build
 + Quantity control
 + ~~User authentication~~
 + User creation
-+ Protected routes
++ ~~Protected routes~~
 + Gear list persistence
 + ~~Circle CI integration~~
 + ~~Set up heroku deployment~~
