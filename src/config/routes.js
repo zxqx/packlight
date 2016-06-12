@@ -8,7 +8,6 @@ import NotFoundPage from '../containers/NotFoundPage';
 import { checkAuth } from '../actions/user';
 
 export default (store) => {
-
   function requireAuthentication() {
     store.dispatch(checkAuth());
   }

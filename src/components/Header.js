@@ -44,11 +44,9 @@ export default class Header extends Component {
                 </ul>
               </DropdownContent>
             </Dropdown>
-          : null}
-
-          {user.isAuthenticated === false ?
+            :
             <Link to="/login" styleName='login-btn'>Log in</Link>
-          : null}
+          }
         </div>
       </div>
     );
