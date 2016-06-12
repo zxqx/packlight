@@ -78,5 +78,6 @@ $ npm run build
 + User creation
 + Protected routes
 + Gear list persistence
-+ Circle CI integration
-+ Set up heroku pipeline and deployment
++ ~~Circle CI integration~~
++ ~~Set up heroku deployment~~
++ Set up heroku stg and prod pipeline
