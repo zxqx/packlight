@@ -1,4 +1,5 @@
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
+@import './colors.scss';
 
 .cell {
   font-size: 18px;
@@ -60,14 +61,14 @@ tr {
       border: 1px solid transparent;
       border-radius: 100%;
       color: #fff;
-      background: #222;
+      background: $primary;
       font: normal normal normal 9px/1 FontAwesome;
       text-rendering: auto;
     }
 
     &:hover:after {
       background: #fff;
-      color: #222;
+      color: $primary;
       border: 1px solid #555;
       cursor: pointer;
     }

@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .h4 {
   margin: 0 0 10px;
   padding-bottom: 5px;
@@ -8,4 +10,9 @@
   padding-left: 10px;
   list-style: none;
   font-size: 16px;
+}
+
+.selected {
+  color: $secondary;
+  font-weight: 700;
 }
