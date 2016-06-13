@@ -27,12 +27,12 @@
   display: inline-block;
 }
 
-input[type="email"].email,
+input[type="text"].email,
 input[type="password"].password {
   display: block;
 }
 
-input[type="email"].invalid,
+input[type="text"].invalid,
 input[type="password"].invalid {
   border-color: #e33e12;
 }

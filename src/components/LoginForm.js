@@ -53,7 +53,7 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={!this.hasEmailError() ? styles.email : styles.invalid} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
+            <input className={!this.hasEmailError() ? styles.email : styles.invalid} type="text" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
 
             <div className={styles.message}>
               {user.code === 'auth/invalid-email' ?
