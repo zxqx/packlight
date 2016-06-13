@@ -54,9 +54,7 @@ export function loginUser(email, password) {
 
     try {
       const res = await authenticate(email, password);
-
       browserHistory.push('/');
-
       return dispatch(loginUserSuccess(res));
     }
     catch (e) {
@@ -97,7 +95,6 @@ export function logoutUser() {
   return async dispatch => {
     try {
       await deauthenticate();
-
       browserHistory.push('/login');
 
       return dispatch({
