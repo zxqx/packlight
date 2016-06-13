@@ -8,6 +8,33 @@ export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 
+const ERRORS = {
+  'auth/user-not-found': {
+    type: 'email',
+    message: 'The user was not found.'
+  },
+  'auth/invalid-email': {
+    type: 'email',
+    message: 'The email address is badly formatted.'
+  },
+  'auth/email-already-in-use': {
+    type: 'email',
+    message: 'The email address is already in use by another account.'
+  },
+  'auth/wrong-password': {
+    type: 'password',
+    message: 'The password is incorrect.'
+  },
+  'auth/weak-password': {
+    type: 'password',
+    message: 'The password must be 6 characters long or more.'
+  },
+  'auth/too-many-requests': {
+    type: 'email',
+    message: 'There are too many requests. Please try again in a few.'
+  }
+};
+
 export function createUser(email, password) {
   return async dispatch => {
     try {
@@ -16,7 +43,8 @@ export function createUser(email, password) {
       return dispatch(loginUserSuccess(res));
     }
     catch (e) {
-      dispatch(createUserFailure(e));
+      const error = ERRORS[e.code];
+      dispatch(createUserFailure({ error }));
     }
   }
 }
@@ -58,7 +86,8 @@ export function loginUser(email, password) {
       return dispatch(loginUserSuccess(res));
     }
     catch (e) {
-      dispatch(loginUserFailure(e));
+      const error = ERRORS[e.code];
+      dispatch(createUserFailure({ error }));
     }
   }
 }

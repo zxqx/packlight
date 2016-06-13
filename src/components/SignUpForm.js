@@ -42,16 +42,12 @@ export default class SignUpForm extends Component {
 
   hasEmailError() {
     const { user } = this.props;
-
-    return user.code === 'auth/invalid-email' ||
-      user.code === 'auth/email-already-in-use' ||
-      user.code === 'auth/too-many-requests';
+    return user.error && user.error.type === 'email';
   }
 
   hasPasswordError() {
     const { user } = this.props;
-
-    return user.code === 'auth/weak-password';
+    return user.error && user.error.type === 'password';
   }
 
   render() {
@@ -68,7 +64,7 @@ export default class SignUpForm extends Component {
 
             <div className={styles.message}>
               {this.hasEmailError() ?
-                user.message
+                user.error.message
               : null}
             </div>
           </div>
@@ -79,7 +75,7 @@ export default class SignUpForm extends Component {
 
             <div className={styles.message}>
               {this.hasPasswordError() ?
-                user.message
+                user.error.message
               : null}
             </div>
           </div>

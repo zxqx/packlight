@@ -33,16 +33,12 @@ export default class LoginForm extends Component {
 
   hasEmailError() {
     const { user } = this.props;
-
-    return user.code === 'auth/invalid-email' ||
-      user.code === 'auth/user-not-found' ||
-      user.code === 'auth/too-many-requests';
+    return user.error && user.error.type === 'email';
   }
 
   hasPasswordError() {
     const { user } = this.props;
-
-    return user.code === 'auth/wrong-password';
+    return user.error && user.error.type === 'password';
   }
 
   render() {
@@ -59,7 +55,7 @@ export default class LoginForm extends Component {
 
             <div className={styles.message}>
               {this.hasEmailError() ?
-                user.message
+                user.error.message
               : null}
             </div>
           </div>
@@ -71,7 +67,7 @@ export default class LoginForm extends Component {
 
             <div className={styles.message}>
               {this.hasPasswordError() ?
-                user.message
+                user.error.message
               : null}
             </div>
           </div>
