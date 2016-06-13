@@ -32,7 +32,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
-    const { styles, ui } = this.props;
+    const { styles, ui, user } = this.props;
 
     return (
       <div className={styles.login}>
@@ -41,12 +41,25 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.email} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
+            <input className={user.code !== 'auth/invalid-email' ? styles.email : styles.invalid} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
+
+            <div className={styles.message}>
+              {user.code === 'auth/invalid-email' ?
+                user.message
+              : null}
+            </div>
           </div>
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <input className={styles.password} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
+            <input className={user.code !== 'auth/wrong-password' ? styles.password : styles.invalid} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
+
+
+            <div className={styles.message}>
+              {user.code === 'auth/wrong-password' ?
+                user.message
+              : null}
+            </div>
           </div>
 
           <div className={styles.field}>

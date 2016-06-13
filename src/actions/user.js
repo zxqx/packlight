@@ -30,9 +30,10 @@ export function loginUserSuccess(payload) {
   };
 }
 
-export function loginUserFailure() {
+export function loginUserFailure(payload) {
   return {
-    type: LOGIN_USER_FAILURE
+    type: LOGIN_USER_FAILURE,
+    payload
   };
 }
 
@@ -48,7 +49,7 @@ export function loginUser(email, password) {
       return dispatch(loginUserSuccess(res));
     }
     catch (e) {
-      dispatch(loginUserFailure());
+      dispatch(loginUserFailure(e));
     }
   }
 }

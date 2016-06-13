@@ -37,6 +37,10 @@ export async function createUserAccount(email, password) {
 
 export async function authenticate(email, password) {
   const res = await firebase.auth().signInWithEmailAndPassword(email, password);
+  if (res.code) {
+    return Promise.reject(res);
+  }
+
   const avatar = await gravatar.url(email);
 
   return {

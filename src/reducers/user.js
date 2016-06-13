@@ -21,6 +21,7 @@ export default createReducer(initialState, {
   [LOGIN_USER_FAILURE](state, action) {
     return {
       ...state,
+      ...action.payload,
       isAuthenticated: false
     };
   },
