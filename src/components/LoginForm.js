@@ -31,6 +31,18 @@ export default class LoginForm extends Component {
     this.props.loginUser(email, password);
   }
 
+  hasEmailError() {
+    const { user } = this.props;
+
+    return user.code === 'auth/invalid-email' || user.code === 'auth/too-many-requests';
+  }
+
+  hasPasswordError() {
+    const { user } = this.props;
+
+    return user.code === 'auth/wrong-password';
+  }
+
   render() {
     const { styles, ui, user } = this.props;
 
@@ -41,7 +53,7 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={user.code !== 'auth/invalid-email' ? styles.email : styles.invalid} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
+            <input className={!this.hasEmailError() ? styles.email : styles.invalid} type="email" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
 
             <div className={styles.message}>
               {user.code === 'auth/invalid-email' ?
@@ -52,7 +64,7 @@ export default class LoginForm extends Component {
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <input className={user.code !== 'auth/wrong-password' ? styles.password : styles.invalid} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
+            <input className={!this.hasPasswordError() ? styles.password : styles.invalid} type="password" id="password" name="password" value={this.props.ui.password} onChange={this.handleChange.bind(this)} />
 
 
             <div className={styles.message}>
