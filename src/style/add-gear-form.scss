@@ -1,15 +1,23 @@
+.form {
+}
+
 form > div {
   width: 84%;
 }
 
-/* hide autocomplete dropdown when no results */
-form > div > div:empty {
-  display: none;
+input[role="combobox"] + div {
+  /* fix position and height bugs caused by flex box grid `position: absolute` property, which is necessary for router transitions */
+  min-height: 200px;
+
+  /* hide autocomplete dropdown when no results */
+  &:empty {
+    display: none;
+  }
 }
 
 .suggestion {
   padding: 5px 10px;
-  width: 592px;
+  width: 590px;
   text-align: left;
   border-bottom: 1px solid #eee;
 }

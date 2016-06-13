@@ -55,7 +55,7 @@ export default class AddGearForm extends Component {
     const { styles, ui } = this.props;
 
     return (
-      <form onSubmit={this.handleFormSubmit.bind(this)}>
+      <form className={styles.form} onSubmit={this.handleFormSubmit.bind(this)}>
         <Autocomplete
           inputProps={{ placeholder: 'Add gear...' }}
           ref="autocomplete"
