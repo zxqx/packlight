@@ -76,6 +76,7 @@ $ npm run build
 + Gear suggestions: Filter by brand
 + Gear suggestions: Filter by weight range
 + Create checklist
++ Sign in anonymously
 + ~~User authentication~~
 + ~~User creation~~
 + ~~Protected routes~~
