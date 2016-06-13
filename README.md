@@ -80,6 +80,8 @@ $ npm run build
 + ~~Protected routes~~
 + ~~Signup form validation~~
 + ~~Login form validation~~
++ Send password reset email
++ Reset password
 + ~~Circle CI integration~~
 + ~~Set up heroku deployment~~
 + Set up heroku stg and prod pipeline
