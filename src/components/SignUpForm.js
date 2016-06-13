@@ -60,7 +60,9 @@ export default class SignUpForm extends Component {
 
           <div className={styles.field}>
             <input className={styles.submit} type="submit" value="Sign up" />
-            <Link to="/login" className={styles.login}>Already have an account? Log in.</Link>
+            <Link to="/login" className={styles.login}>
+              Already have an account? Log in.
+            </Link>
           </div>
         </form>
       </div>
