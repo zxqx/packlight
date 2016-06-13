@@ -40,8 +40,22 @@ export default class SignUpForm extends Component {
     this.props.createUser(email, password);
   }
 
+  hasEmailError() {
+    const { user } = this.props;
+
+    return user.code === 'auth/invalid-email' ||
+      user.code === 'auth/email-already-in-use' ||
+      user.code === 'auth/too-many-requests';
+  }
+
+  hasPasswordError() {
+    const { user } = this.props;
+
+    return user.code === 'auth/weak-password';
+  }
+
   render() {
-    const { styles, ui } = this.props;
+    const { styles, ui, user } = this.props;
 
     return (
       <div className={styles.signup}>
@@ -50,12 +64,24 @@ export default class SignUpForm extends Component {
         <form onSubmit={this.handleFormSubmit.bind(this)}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.email} type="email" id="email" name="email" value={ui.email} onChange={this.handleChange.bind(this)} />
+            <input className={!this.hasEmailError() ? styles.email : styles.invalid} type="text" id="email" name="email" value={ui.email} onChange={this.handleChange.bind(this)} />
+
+            <div className={styles.message}>
+              {this.hasEmailError() ?
+                user.message
+              : null}
+            </div>
           </div>
 
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">Password</label>
-            <InputPassword className={styles.password} onChange={this.handlePasswordChange.bind(this)} infoBar={false} unMaskTime={500} ref="password" id="password" name="password" />
+            <InputPassword className={!this.hasPasswordError() ? styles.password : styles.invalid} onChange={this.handlePasswordChange.bind(this)} infoBar={false} unMaskTime={500} ref="password" id="password" name="password" />
+
+            <div className={styles.message}>
+              {this.hasPasswordError() ?
+                user.message
+              : null}
+            </div>
           </div>
 
           <div className={styles.field}>

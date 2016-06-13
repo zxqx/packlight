@@ -56,7 +56,7 @@ export default class LoginForm extends Component {
             <input className={!this.hasEmailError() ? styles.email : styles.invalid} type="text" id="email" name="email" value={this.props.ui.email} onChange={this.handleChange.bind(this)} />
 
             <div className={styles.message}>
-              {user.code === 'auth/invalid-email' ?
+              {this.hasEmailError() ?
                 user.message
               : null}
             </div>
@@ -68,7 +68,7 @@ export default class LoginForm extends Component {
 
 
             <div className={styles.message}>
-              {user.code === 'auth/wrong-password' ?
+              {this.hasPasswordError() ?
                 user.message
               : null}
             </div>

@@ -17,7 +17,8 @@
   }
 
   /* reset react-ux-password-field input styles */
-  input[type="text"].password {
+  input[type="text"].password,
+  input[type="text"].invalid {
     font-weight: 300 !important;
     color: #222 !important;
   }
@@ -38,11 +39,14 @@
   display: inline-block;
 }
 
-input[type="email"].email,
-input[type="text"].password,
+input[type="text"].email,
 input[type="password"].password {
-  margin-bottom: 20px;
   display: block;
+}
+
+input[type="text"].invalid,
+input[type="password"].invalid {
+  border-color: #e33e12;
 }
 
 input[type="submit"].submit {
@@ -53,4 +57,14 @@ input[type="submit"].submit {
   margin-left: 15px;
   font-size: 16px;
   color: $primary;
+}
+
+.message {
+  height: 28px;
+  color: #e33e12;
+  font-size: 12px;
+
+  &:empty {
+    visibility: hidden;
+  }
 }

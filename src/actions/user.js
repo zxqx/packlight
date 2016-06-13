@@ -1,6 +1,7 @@
 import { browserHistory } from 'react-router';
 import { authenticate, deauthenticate, checkAuthentication, createUserAccount } from '../middleware/auth';
 
+export const CREATE_USER_FAILURE = 'CREATE_USER_FAILURE';
 export const LOGIN_USER_REQUEST = 'LOGIN_USER_REQUEST';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
@@ -9,12 +10,22 @@ export const UPDATE_USER = 'UPDATE_USER';
 
 export function createUser(email, password) {
   return async dispatch => {
-    const res = await createUserAccount(email, password);
-
-    browserHistory.push('/');
-
-    return dispatch(loginUserSuccess(res));
+    try {
+      const res = await createUserAccount(email, password);
+      browserHistory.push('/');
+      return dispatch(loginUserSuccess(res));
+    }
+    catch (e) {
+      dispatch(createUserFailure(e));
+    }
   }
+}
+
+export function createUserFailure(payload) {
+  return {
+    type: CREATE_USER_FAILURE,
+    payload
+  };
 }
 
 export function loginUserRequest() {

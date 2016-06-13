@@ -27,6 +27,11 @@ export function checkAuthentication(cb) {
 
 export async function createUserAccount(email, password) {
   const res = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+  if (res.code) {
+    return Promise.reject(res);
+  }
+
   const avatar = await gravatar.url(email);
 
   return {
