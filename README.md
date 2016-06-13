@@ -9,6 +9,7 @@ A gear awareness app for lightening your camping and backpacking load.
 ## Tech Stack
 
 * [express](http://expressjs.com/) - Server HTTP framework
+* [firebase](https://firebase.google.com) - Authentication & data persistence
 * [react](https://facebook.github.io/react/) - View layer
 * [redux](https://github.com/reactjs/redux) - Frontend state management
 * [sass](http://sass-lang.com/) - CSS preprocessor
