@@ -18,9 +18,7 @@ export default class SignUpPage extends Component {
 
   render() {
     return (
-      <div>
-        <SignUpForm {...this.props} />
-      </div>
+      <SignUpForm {...this.props} />
     );
   }
 }

@@ -18,9 +18,7 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-        <LoginForm {...this.props} />
-      </div>
+      <LoginForm {...this.props} />
     );
   }
 }

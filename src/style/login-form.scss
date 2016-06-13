@@ -1,7 +1,10 @@
 @import './colors.scss';
 
 .login {
-  margin: 20px auto 0;
+  position: absolute;
+  left: 50%;
+  margin-top: 20px;
+  margin-left: -331px;
   padding: 40px 30px;
   width: 600px;
   min-height: 300px;

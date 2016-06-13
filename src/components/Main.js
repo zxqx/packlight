@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { RouteTransition, presets } from 'react-router-transition';
 import cssModules from 'react-css-modules';
 import Header from '../components/Header';
 import * as UserActions from '../actions/user';
@@ -25,8 +26,12 @@ export default class Main extends Component {
         <Header user={user} logoutUser={logoutUser} />
 
         <div className={styles.main}>
-          {/* this will render the child routes */}
-          {this.props.children}
+          <RouteTransition
+            pathname={this.props.location.pathname}
+            {...presets.pop}>
+            {/* this will render the child routes */}
+            {this.props.children}
+          </RouteTransition>
         </div>
       </div>
     );
