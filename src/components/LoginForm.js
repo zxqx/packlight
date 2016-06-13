@@ -34,7 +34,9 @@ export default class LoginForm extends Component {
   hasEmailError() {
     const { user } = this.props;
 
-    return user.code === 'auth/invalid-email' || user.code === 'auth/too-many-requests';
+    return user.code === 'auth/invalid-email' ||
+      user.code === 'auth/user-not-found' ||
+      user.code === 'auth/too-many-requests';
   }
 
   hasPasswordError() {
