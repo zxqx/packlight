@@ -5,21 +5,21 @@ import styles from '../style/gear-list-list.scss';
 @cssModules(styles)
 export default class GearListList extends Component {
   static propTypes = {
+    gearLists: PropTypes.array.isRequired,
     styles: PropTypes.object
   };
 
   render() {
-    const { styles } = this.props;
+    const { styles, gearLists } = this.props;
 
     return (
       <div className={styles.container}>
         <h4 className={styles.h4}>Gear Lists</h4>
 
         <ul className={styles.list}>
-          <li>Winter 2-Day</li>
-          <li>Overnight</li>
-          <li className={styles.selected}>Summer Week</li>
-          <li>Car Camping</li>
+          {gearLists.map(gearList =>
+            <li key={gearList.id}>{gearList.name}</li>
+          )}
         </ul>
       </div>
     );

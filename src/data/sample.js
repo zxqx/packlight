@@ -1,6 +1,7 @@
 export default [
   {
     id: 'overnight',
+    name: 'Overnight',
     items: [
       {
         id: 'B000PGKVOY',
@@ -26,6 +27,18 @@ export default [
         weight: 1,
         image: 'http://ecx.images-amazon.com/images/I/31BQZMaEyKL._SL75_.jpg'
       },
+      {
+        id: 'B0042T8XRC',
+        name: 'MinnKota MK 315D On-Board Battery Charger (3 Banks, 5 Amps per Bank)',
+        weight: 15.43,
+        image: 'http://ecx.images-amazon.com/images/I/31t2r3Y8pDL._SL75_.jpg'
+      }
+    ]
+  },
+  {
+    id: '2-day',
+    name: '2-Day',
+    items: [
       {
         id: 'B0042T8XRC',
         name: 'MinnKota MK 315D On-Board Battery Charger (3 Banks, 5 Amps per Bank)',

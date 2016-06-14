@@ -17,6 +17,7 @@ import styles from '../style/common.scss';
 export default class AddGearPage extends Component {
   static propTypes = {
     gearList: PropTypes.object.isRequired,
+    gearLists: PropTypes.array.isRequired,
     getGearLists: PropTypes.func.isRequired,
     addGearItem: PropTypes.func.isRequired,
     removeGearItem: PropTypes.func.isRequired,
@@ -28,13 +29,13 @@ export default class AddGearPage extends Component {
   }
 
   render() {
-    const { gearList, addGearItem, removeGearItem, getGearListSuggestions } = this.props;
+    const { gearList, gearLists, addGearItem, removeGearItem, getGearListSuggestions } = this.props;
 
     return (
       <Grid className={styles.grid}>
         <Row>
           <Col xs={3} md={3} className={styles.aside}>
-            <GearListList />
+            <GearListList gearLists={gearLists} />
           </Col>
 
           <Col xs={9} md={9} className={styles.col}>
