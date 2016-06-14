@@ -29,13 +29,13 @@ export default class AddGearPage extends Component {
   }
 
   render() {
-    const { gearList, gearLists, addGearItem, removeGearItem, getGearListSuggestions } = this.props;
+    const { gearList, gearLists, addGearItem, removeGearItem, getGearListSuggestions, routeParams } = this.props;
 
     return (
       <Grid className={styles.grid}>
         <Row>
           <Col xs={3} md={3} className={styles.aside}>
-            <GearListList gearLists={gearLists} />
+            <GearListList gearLists={gearLists} selectedGearList={routeParams.listId} />
           </Col>
 
           <Col xs={9} md={9} className={styles.col}>

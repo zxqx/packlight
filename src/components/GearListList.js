@@ -7,11 +7,12 @@ import styles from '../style/gear-list-list.scss';
 export default class GearListList extends Component {
   static propTypes = {
     gearLists: PropTypes.array.isRequired,
+    selectedGearList: PropTypes.string.isRequired,
     styles: PropTypes.object
   };
 
   render() {
-    const { styles, gearLists } = this.props;
+    const { styles, gearLists, selectedGearList } = this.props;
 
     return (
       <div className={styles.container}>
@@ -20,7 +21,7 @@ export default class GearListList extends Component {
         <ul className={styles.list}>
           {gearLists.map(gearList =>
             <li key={gearList.id}>
-              <Link to={`/lists/${gearList.id}`}>{gearList.name}</Link>
+              <Link className={ gearList.id === selectedGearList ? styles.selected : null} to={`/lists/${gearList.id}`}>{gearList.name}</Link>
             </li>
           )}
         </ul>
