@@ -61,6 +61,7 @@ $ npm run build
 + ~~Product search API integration~~
 + Category organization
 + Create new list
++ ~~View gear list by URL~~
 + Add custom gear item
 + Copy list
 + Share list
