@@ -17,11 +17,12 @@ export default createReducer(initialState, {
     };
   },
   [REMOVE_GEAR_ITEM](state, action) {
-    const items = state.items.filter(item => item.id !== action.payload.id);
-
     return {
       ...state,
-      items
+      [action.payload.gearList.id]: {
+        ...action.payload.gearList,
+        items: state[action.payload.gearList.id].items.filter(item => item.id !== action.payload.item.id)
+      }
     };
   }
 });

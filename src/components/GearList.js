@@ -12,6 +12,11 @@ export default class GearList extends Component {
     removeGearItem: PropTypes.func.isRequired
   };
 
+  removeGearItem(item) {
+    const { gearList } = this.props;
+    this.props.removeGearItem({ gearList, item });
+  }
+
   render() {
     const { styles, gearList, removeGearItem } = this.props;
 
@@ -24,7 +29,7 @@ export default class GearList extends Component {
         <table className={styles.list}>
           <tbody>
             {gearList.items.map((item, index) =>
-              <GearItem key={index} item={item} removeGearItem={removeGearItem} />
+              <GearItem key={index} item={item} removeGearItem={() => this.removeGearItem(item)} />
             )}
 
             {gearList.items.length ?
