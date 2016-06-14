@@ -2,7 +2,7 @@
 
 A gear awareness app for lightening your camping and backpacking load.
 
-<img src='https://www.dropbox.com/s/p96g41zgi4tcuyo/zakang.jpg?raw=1' width='150px'>
+<img src='https://www.dropbox.com/s/yfatrdvor8hrqns/packlight.png?raw=1' width='200px'>
 
 ## Requirements
 
@@ -96,3 +96,11 @@ $ npm run build
 + ~~Circle CI integration~~
 + ~~Set up heroku deployment~~
 + Set up heroku stg and prod pipeline
+
+## Attribution
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+## License
+
+MIT
