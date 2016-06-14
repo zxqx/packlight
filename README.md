@@ -2,6 +2,8 @@
 
 A gear awareness app for lightening your camping and backpacking load.
 
+<img src='https://www.dropbox.com/s/p96g41zgi4tcuyo/zakang.jpg?raw=1' width='150px'>
+
 ## Requirements
 
 + NodeJS
