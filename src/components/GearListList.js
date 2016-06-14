@@ -7,7 +7,7 @@ import styles from '../style/gear-list-list.scss';
 export default class GearListList extends Component {
   static propTypes = {
     gearLists: PropTypes.array.isRequired,
-    selectedGearList: PropTypes.string.isRequired,
+    selectedGearList: PropTypes.string,
     styles: PropTypes.object
   };
 

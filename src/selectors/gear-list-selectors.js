@@ -6,9 +6,7 @@ const gearListByIdSelector = (state, props) => {
   }
 }
 
-const gearListListSelector = (state, props) => {
-  return state.gearList;
-}
+const gearListListSelector = state => state.gearList;
 
 export const gearListSelector = createSelector(
   gearListByIdSelector,
@@ -16,18 +14,7 @@ export const gearListSelector = createSelector(
   (gearList, gearLists) => {
     return {
       gearList: gearList || {},
-      gearLists: processGearLists(gearLists),
-      selectedGearList: gearList ? gearList.id : ''
+      gearLists: Object.keys(gearLists).map(id => gearLists[id])
     };
   }
 );
-
-function processGearLists(gearLists) {
-  if (gearLists) {
-    return Object.keys(gearLists)
-      .map(id => gearLists[id]);
-  }
-  else {
-    return [];
-  }
-}

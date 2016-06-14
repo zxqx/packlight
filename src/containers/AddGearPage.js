@@ -18,7 +18,6 @@ export default class AddGearPage extends Component {
   static propTypes = {
     gearList: PropTypes.object.isRequired,
     gearLists: PropTypes.array.isRequired,
-    selectedGearList: PropTypes.string.isRequired,
     getGearLists: PropTypes.func.isRequired,
     addGearItem: PropTypes.func.isRequired,
     removeGearItem: PropTypes.func.isRequired,
@@ -40,7 +39,7 @@ export default class AddGearPage extends Component {
       <Grid className={styles.grid}>
         <Row>
           <Col xs={3} md={3} className={styles.aside}>
-            <GearListList gearLists={gearLists} selectedGearList={selectedGearList} />
+            <GearListList gearLists={gearLists} selectedGearList={gearList.id} />
           </Col>
 
           <Col xs={9} md={9} className={styles.col}>
