@@ -17,7 +17,7 @@ import styles from '../style/common.scss';
 }), wrapActionCreators(GearListActions))
 export default class AddGearPage extends Component {
   static propTypes = {
-    gearList: PropTypes.array.isRequired,
+    gearList: PropTypes.object.isRequired,
     addGearItem: PropTypes.func.isRequired,
     removeGearItem: PropTypes.func.isRequired,
     getGearListSuggestions: PropTypes.func.isRequired
@@ -40,7 +40,7 @@ export default class AddGearPage extends Component {
             />
 
             <GearList
-              items={gearList}
+              gearList={gearList}
               removeGearItem={removeGearItem}
             />
           </Col>

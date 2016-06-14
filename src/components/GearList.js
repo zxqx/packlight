@@ -8,23 +8,23 @@ import styles from '../style/gear-list.scss';
 export default class GearList extends Component {
   static propTypes = {
     styles: PropTypes.object,
-    items: PropTypes.array.isRequired,
+    gearList: PropTypes.object.isRequired,
     removeGearItem: PropTypes.func.isRequired
   };
 
   render() {
-    const { styles, items, removeGearItem } = this.props;
+    const { styles, gearList, removeGearItem } = this.props;
 
     return (
       <div className={styles.container}>
         <table className={styles.list}>
           <tbody>
-            {items.map((item, index) =>
+            {gearList.items.map((item, index) =>
               <GearItem key={index} item={item} removeGearItem={removeGearItem} />
             )}
 
-            {items.length ?
-              <GearWeightTotal items={items} />
+            {gearList.items.length ?
+              <GearWeightTotal items={gearList.items} />
             : null}
           </tbody>
         </table>
