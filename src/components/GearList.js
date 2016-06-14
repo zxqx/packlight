@@ -15,6 +15,10 @@ export default class GearList extends Component {
   render() {
     const { styles, gearList, removeGearItem } = this.props;
 
+    if (!gearList.items) {
+      return <div></div>;
+    }
+
     return (
       <div className={styles.container}>
         <table className={styles.list}>

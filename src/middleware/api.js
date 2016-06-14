@@ -1,4 +1,6 @@
 import 'whatwg-fetch';
+import { normalize, Schema, arrayOf } from 'normalizr';
+import sampleData from '../data/sample.js';
 
 function productHasWeightAttribute(product) {
   return product.ItemAttributes &&
@@ -51,6 +53,15 @@ function processData(data) {
         weight: getWeightInLbs(unit, weight)
       };
     });
+}
+
+export async function fetchGearLists() {
+  const gearList = new Schema('gearList');
+  gearList.define();
+
+  const data = Object.assign({}, normalize(sampleData, arrayOf(gearList)));
+
+  return data.entities;
 }
 
 export async function fetchGearListSuggestions(keywords) {

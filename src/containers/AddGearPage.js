@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { gearListSelector } from '../selectors/gear-list-selectors';
 import AddGearForm from '../components/AddGearForm';
 import GearList from '../components/GearList';
 import GearListList from '../components/GearListList';
@@ -12,16 +13,19 @@ import styles from '../style/common.scss';
 
 @cssModules(styles)
 @ui({ key: 'addGearPage' })
-@connect(state => ({
-  gearList: state.gearList
-}), wrapActionCreators(GearListActions))
+@connect(gearListSelector, wrapActionCreators(GearListActions))
 export default class AddGearPage extends Component {
   static propTypes = {
     gearList: PropTypes.object.isRequired,
+    getGearLists: PropTypes.func.isRequired,
     addGearItem: PropTypes.func.isRequired,
     removeGearItem: PropTypes.func.isRequired,
     getGearListSuggestions: PropTypes.func.isRequired
   };
+
+  componentWillMount() {
+    this.props.getGearLists();
+  }
 
   render() {
     const { gearList, addGearItem, removeGearItem, getGearListSuggestions } = this.props;
