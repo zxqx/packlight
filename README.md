@@ -2,7 +2,7 @@
 
 A gear awareness app for lightening your camping and backpacking load.
 
-<img src='https://www.dropbox.com/s/yfatrdvor8hrqns/packlight.png?raw=1' width='200px'>
+<img src='https://www.dropbox.com/s/yfatrdvor8hrqns/packlight.png?raw=1' style="width: 220px; margin-top: 10px;">
 
 ## Requirements
 
@@ -97,7 +97,7 @@ $ npm run build
 + ~~Set up heroku deployment~~
 + Set up heroku stg and prod pipeline
 
-## Attribution
+## Attributions
 
 <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
