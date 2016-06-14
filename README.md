@@ -61,7 +61,8 @@ $ npm run build
 + ~~Product search API integration~~
 + Category organization
 + ~~View gear list by URL~~
-+ Add custom gear item
++ Gear box
++ Add new gear item
 + Create new list
 + Copy list
 + Clear list
@@ -72,7 +73,6 @@ $ npm run build
 + Quantity control
 + lb -> kg conversion
 + ~~Remove gear item~~
-+ Weight analyzer
 + Gear suggestions
 + Create checklist
 + Share list
@@ -81,11 +81,16 @@ $ npm run build
 + ~~Protected routes~~
 + ~~Signup form validation~~
 + ~~Login form validation~~
++ Import from Excel
++ Import from LP
++ Export to CSV
 + Send password reset email
 + Reset password
 + Gear suggestions: Filter by category
 + Gear suggestions: Filter by brand
 + Gear suggestions: Filter by weight range
++ Weight analyzer
++ Get trip weather
 + ~~Circle CI integration~~
 + ~~Set up heroku deployment~~
 + Set up heroku stg and prod pipeline
