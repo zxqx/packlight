@@ -26,11 +26,10 @@ export default class Main extends Component {
         <Header user={user} logoutUser={logoutUser} />
 
         <RouteTransition
-          pathname={this.props.location.pathname}
+          pathname={this.props.location.pathname.split('/')[1]}
           {...presets.pop}>
 
           <div className={styles.main}>
-            {/* this will render the child routes */}
             {this.props.children}
           </div>
         </RouteTransition>
