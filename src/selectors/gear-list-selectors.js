@@ -14,19 +14,20 @@ export const gearListSelector = createSelector(
   gearListByIdSelector,
   gearListListSelector,
   (gearList, gearLists) => {
-    if (!gearList) {
-      return {
-        gearList: {},
-        gearLists: [],
-        selectedGearList: ''
-      }
-    }
-
     return {
-      gearList,
-      gearLists: Object.keys(gearLists)
-        .map(id => gearLists[id]),
-      selectedGearList: gearList.id
+      gearList: gearList || {},
+      gearLists: processGearLists(gearLists),
+      selectedGearList: gearList ? gearList.id : ''
     };
   }
 );
+
+function processGearLists(gearLists) {
+  if (gearLists) {
+    return Object.keys(gearLists)
+      .map(id => gearLists[id]);
+  }
+  else {
+    return [];
+  }
+}
