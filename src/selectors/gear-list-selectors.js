@@ -1,7 +1,9 @@
 import { createSelector } from 'reselect';
 
 const gearListByIdSelector = (state, props) => {
-  return state.gearList[props.routeParams.listId];
+  if (props.routeParams.listId) {
+    return state.gearList[props.routeParams.listId];
+  }
 }
 
 const gearListListSelector = (state, props) => {
@@ -15,14 +17,16 @@ export const gearListSelector = createSelector(
     if (!gearList) {
       return {
         gearList: {},
-        gearLists: []
+        gearLists: [],
+        selectedGearList: ''
       }
     }
 
     return {
       gearList,
       gearLists: Object.keys(gearLists)
-        .map(id => gearLists[id])
+        .map(id => gearLists[id]),
+      selectedGearList: gearList.id
     };
   }
 );

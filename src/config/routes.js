@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, Redirect } from 'react-router';
 import App from '../containers/App';
 import LoginPage from '../containers/LoginPage';
 import SignUpPage from '../containers/SignUpPage';
@@ -17,7 +17,7 @@ export default (store) => {
     <Route component={App}>
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignUpPage} />
-      <Route path="/" onEnter={requireAuthentication} component={AddGearPage} />
+      <Redirect from="/" to="/lists/overnight" />
       <Route path="/lists/:listId" onEnter={requireAuthentication} component={AddGearPage} />
       <Route path="/another" component={AnotherPage} />
       <Route path="*" component={NotFoundPage} />
