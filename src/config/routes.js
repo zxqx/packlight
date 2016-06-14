@@ -18,7 +18,9 @@ export default (store) => {
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignUpPage} />
       <Redirect from="/" to="/lists/overnight" />
-      <Route path="/lists/:listId" onEnter={requireAuthentication} component={AddGearPage} />
+      <Route path="/lists" onEnter={requireAuthentication}>
+        <Route path=":listId" component={AddGearPage} />
+      </Route>
       <Route path="/another" component={AnotherPage} />
       <Route path="*" component={NotFoundPage} />
     </Route>
