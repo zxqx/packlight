@@ -25,7 +25,11 @@ export default class AddGearPage extends Component {
   };
 
   componentWillMount() {
-    this.props.getGearLists();
+    // Prevent from making additional API requests when swapping between
+    // gear pages
+    if (!this.props.gearLists.length) {
+      this.props.getGearLists();
+    }
   }
 
   render() {
