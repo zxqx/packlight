@@ -8,9 +8,6 @@ export default createReducer(initialState, {
     return action.payload;
   },
   [ADD_GEAR_ITEM](state, action) {
-    console.log(action.payload.gearList);
-    console.log(action.payload.item);
-
     return {
       ...state,
       [action.payload.gearList.id]: {
