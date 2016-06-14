@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
 import styles from '../style/gear-list-list.scss';
 
@@ -18,7 +19,9 @@ export default class GearListList extends Component {
 
         <ul className={styles.list}>
           {gearLists.map(gearList =>
-            <li key={gearList.id}>{gearList.name}</li>
+            <li key={gearList.id}>
+              <Link to={`/lists/${gearList.id}`}>{gearList.name}</Link>
+            </li>
           )}
         </ul>
       </div>
