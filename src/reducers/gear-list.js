@@ -8,21 +8,28 @@ export default createReducer(initialState, {
     return action.payload;
   },
   [ADD_GEAR_ITEM](state, action) {
+    console.log(action.payload.gearList);
+    console.log(action.payload.item);
+
     return {
       ...state,
-      items: [
-        ...state.items,
-        action.payload
-      ]
+      [action.payload.gearList.id]: {
+        ...action.payload.gearList,
+        items: [
+          ...action.payload.gearList.items,
+          action.payload.item
+        ]
+      }
     };
   },
   [REMOVE_GEAR_ITEM](state, action) {
     return {
       ...state,
-      [action.payload.gearList.id]: {
+    [action.payload.gearList.id]: {
         ...action.payload.gearList,
-        items: state[action.payload.gearList.id].items.filter(item => item.id !== action.payload.item.id)
+      items: state[action.payload.gearList.id].items.filter(item => item.id !== action.payload.item.id)
       }
     };
   }
 });
+

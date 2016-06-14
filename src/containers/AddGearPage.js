@@ -40,6 +40,7 @@ export default class AddGearPage extends Component {
 
           <Col xs={9} md={9} className={styles.col}>
             <AddGearForm
+              gearList={gearList}
               addGearItem={addGearItem}
               getGearListSuggestions={getGearListSuggestions}
             />

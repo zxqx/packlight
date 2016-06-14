@@ -16,6 +16,7 @@ import styles from '../style/add-gear-form.scss';
 export default class AddGearForm extends Component {
   static propTypes = {
     styles: PropTypes.object,
+    gearList: PropTypes.object.isRequired,
     addGearItem: PropTypes.func.isRequired,
     getGearListSuggestions: PropTypes.func.isRequired
   };
@@ -39,10 +40,11 @@ export default class AddGearForm extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
 
+    const { gearList } = this.props;
     const { selection } = this.props.ui;
     if (!selection) return;
 
-    this.props.addGearItem(selection);
+    this.props.addGearItem({ item: selection, gearList });
     this.props.resetUI();
   }
 
