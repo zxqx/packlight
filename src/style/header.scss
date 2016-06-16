@@ -49,6 +49,7 @@
   font-size: 14px;
 
   a {
+    padding: 18px 0 16px;
     color: #fff;
 
     &:hover {
@@ -76,11 +77,12 @@
 }
 
 .dropdown-content {
+  top: 39px;
   width: 100%;
 
   ul {
     position: relative;
-    margin-top: 7px;
+    margin-top: 0;
     padding-left: 0;
     width: 100%;
     float: right;
