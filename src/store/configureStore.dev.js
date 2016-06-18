@@ -4,8 +4,8 @@ import createLogger from 'redux-logger';
 import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import { persistState } from 'redux-devtools';
-import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
+import rootReducer from 'reducers';
+import DevTools from 'containers/DevTools';
 
 const logger = createLogger({
   level: 'info',

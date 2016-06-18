@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
 import cssModules from 'react-css-modules';
-import styles from '../style/header.scss';
+import styles from 'style/header.scss';
 import 'react-simple-dropdown/styles/Dropdown.css';
 
 @cssModules(styles)

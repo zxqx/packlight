@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { RouteTransition, presets } from 'react-router-transition';
 import cssModules from 'react-css-modules';
-import Header from '../components/Header';
-import * as UserActions from '../actions/user';
-import wrapActionCreators from '../utils/wrap-action-creators';
-import styles from '../style/index.scss';
+import Header from 'components/Header';
+import * as UserActions from 'actions/user';
+import wrapActionCreators from 'utils/wrap-action-creators';
+import styles from 'style/index.scss';
 
 @connect(state => ({
   user: state.user

@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import { normalize, Schema, arrayOf } from 'normalizr';
-import sampleData from '../data/sample.js';
+import sampleData from 'data/sample.js';
 
 function productHasWeightAttribute(product) {
   return product.ItemAttributes &&

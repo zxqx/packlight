@@ -1,5 +1,5 @@
 import { browserHistory } from 'react-router';
-import { authenticate, deauthenticate, checkAuthentication, createUserAccount } from '../middleware/auth';
+import { authenticate, deauthenticate, checkAuthentication, createUserAccount } from 'middleware/auth';
 
 export const CREATE_USER_FAILURE = 'CREATE_USER_FAILURE';
 export const LOGIN_USER_REQUEST = 'LOGIN_USER_REQUEST';

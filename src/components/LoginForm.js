@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
-import styles from '../style/login-form.scss';
+import styles from 'style/login-form.scss';
 
 @cssModules(styles)
 @ui({

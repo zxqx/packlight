@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
 import GearItem from './GearItem';
 import GearWeightTotal from './GearWeightTotal';
-import styles from '../style/gear-list.scss';
+import styles from 'style/gear-list.scss';
 
 @cssModules(styles)
 export default class GearList extends Component {

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
-import styles from '../style/gear-item.scss';
+import styles from 'style/gear-item.scss';
 
 @cssModules(styles)
 export default class GearItem extends Component {

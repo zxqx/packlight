@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import ui from 'redux-ui';
 import cssModules from 'react-css-modules';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { gearListSelector } from '../selectors/gear-list-selectors';
-import AddGearForm from '../components/AddGearForm';
-import GearList from '../components/GearList';
-import GearListList from '../components/GearListList';
-import * as GearListActions from '../actions/gear-list';
-import wrapActionCreators from '../utils/wrap-action-creators';
-import styles from '../style/common.scss';
+import { gearListSelector } from 'selectors/gear-list-selectors';
+import AddGearForm from 'components/AddGearForm';
+import GearList from 'components/GearList';
+import GearListList from 'components/GearListList';
+import * as GearListActions from 'actions/gear-list';
+import wrapActionCreators from 'utils/wrap-action-creators';
+import styles from 'style/common.scss';
 
 @cssModules(styles)
 @ui({ key: 'addGearPage' })

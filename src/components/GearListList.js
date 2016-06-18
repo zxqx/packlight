@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
-import styles from '../style/gear-list-list.scss';
+import styles from 'style/gear-list-list.scss';
 
 @cssModules(styles)
 export default class GearListList extends Component {

@@ -1,4 +1,4 @@
-import { fetchGearLists, fetchGearListSuggestions } from '../middleware/api';
+import { fetchGearLists, fetchGearListSuggestions } from 'middleware/api';
 
 export const UPDATE_GEAR_LISTS = 'UPDATE_GEAR_LISTS';
 export const ADD_GEAR_ITEM = 'ADD_GEAR_ITEM';

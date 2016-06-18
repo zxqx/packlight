@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ui from 'redux-ui';
-import SignUpForm from '../components/SignUpForm';
-import * as UserActions from '../actions/user';
-import wrapActionCreators from '../utils/wrap-action-creators';
+import SignUpForm from 'components/SignUpForm';
+import * as UserActions from 'actions/user';
+import wrapActionCreators from 'utils/wrap-action-creators';
 
 @ui({ key: 'signUpPage' })
 @connect(state => ({

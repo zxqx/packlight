@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import cssModules from 'react-css-modules';
 import ui from 'redux-ui';
 import InputPassword from 'react-ux-password-field';
-import styles from '../style/signup-form.scss';
+import styles from 'style/signup-form.scss';
 
 @cssModules(styles)
 @ui({

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import getRoutes from '../config/routes';
+import getRoutes from 'config/routes';
 
 export default class Root extends Component {
   static propTypes = {

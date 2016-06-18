@@ -29,6 +29,10 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js'],
+    root: [
+      path.resolve('src'),
+      path.resolve('node_modules')
+    ]
   },
   module: {
     loaders: [

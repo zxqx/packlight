@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
-import styles from '../style/gear-analyzer.scss';
+import styles from 'style/gear-analyzer.scss';
 
 @cssModules(styles)
 export default class GearAnalyzer extends Component {

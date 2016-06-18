@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router';
-import App from '../containers/App';
-import LoginPage from '../containers/LoginPage';
-import SignUpPage from '../containers/SignUpPage';
-import AddGearPage from '../containers/AddGearPage';
-import AnotherPage from '../containers/AnotherPage';
-import NotFoundPage from '../containers/NotFoundPage';
-import { checkAuth } from '../actions/user';
+import App from 'containers/App';
+import LoginPage from 'containers/LoginPage';
+import SignUpPage from 'containers/SignUpPage';
+import AddGearPage from 'containers/AddGearPage';
+import AnotherPage from 'containers/AnotherPage';
+import NotFoundPage from 'containers/NotFoundPage';
+import { checkAuth } from 'actions/user';
 
 export default (store) => {
   function requireAuthentication() {
