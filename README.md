@@ -3,7 +3,7 @@
 A gear awareness app for lightening your camping and backpacking load.
 
 <br />
-<img src='https://www.dropbox.com/s/yfatrdvor8hrqns/packlight.png?raw=1' width='220px'>
+<img src='https://dl.dropboxusercontent.com/s/yfatrdvor8hrqns/packlight.png' width='220px'>
 
 ## Requirements
 
