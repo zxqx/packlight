@@ -64,7 +64,7 @@
     "normalizr": "^2.1.0",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
-    "react-autocomplete": "https://github.com/StuartApp/react-autocomplete",
+    "react-autocomplete": "^1.0.1",
     "react-css-modules": "^3.7.6",
     "react-dom": "^15.0.0",
     "react-flexbox-grid": "^0.9.6",
